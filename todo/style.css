@@ -20,11 +20,12 @@ main {
 }
 
 #card {
-  width: 50%;
+  width: 70%;
   min-height: 50vh;
   background: linear-gradient(rgb(239, 230, 230), olive);
   border-radius: 20px;
   padding-bottom: 20px;
+  padding: 20px;
 }
 
 #header {
@@ -39,14 +40,13 @@ main {
 #add-task {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 20px;
-  position: relative;
   width: 100%;
 }
 
 #add-task textarea {
-  width: 80%;
+  flex: 1;
   padding: 20px 20px;
   border-radius: 20px;
   border: none;
@@ -61,14 +61,17 @@ main {
 }
 
 #addBtn {
-  position: absolute;
-  right: 10%;
   padding: 19.7px 30px;
   border-radius: 20px;
   border: none;
   cursor: pointer;
   background-color: orange;
   border: 2px solid salmon;
+  margin-left: 10px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #task-list {
@@ -87,14 +90,12 @@ main {
 }
 
 .task-item .task-text {
-  flex: 1 1 auto; /* allow it to shrink and wrap */
+  flex: 1 1 auto;
   margin-left: 15px;
-  /* Word wrapping */
-  word-break: break-word; /* breaks long words */
+  word-break: break-word;
   overflow-wrap: break-word;
-  white-space: normal; /* allow normal wrapping */
-  /* Prevent horizontal overflow */
-  min-width: 0; /* important for flex items to wrap properly */
+  white-space: normal;
+  min-width: 0;
 }
 
 .task-item .delete {
@@ -104,15 +105,135 @@ main {
   margin-left: 50px;
 }
 
-@media (max-width: 500px) {
-  #card {
+@media (max-width: 500px) and (max-height: 799px) {
+  main {
+    width: 100%;
+  }
+  main #card {
+    width: 100%;
+  }
+  main #add-task {
+    width: 100%;
+  }
+  main #add-task textarea {
     width: 90%;
   }
-  #add-task textarea {
-    width: 90%;
-  }
-  #addBtn {
+  main #add-task #addBtn {
+    width: 20%;
     right: 5%;
     padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 501px) and (max-width: 767px) and (min-height: 800px) and (max-height: 899px) {
+  main {
+    width: 100%;
+  }
+  main #card {
+    width: 90%;
+  }
+  main #add-task {
+    width: 100%;
+  }
+  main #add-task textarea {
+    width: 90%;
+  }
+  main #add-task #addBtn {
+    width: 20%;
+    right: 5%;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 900px) and (max-height: 1023px) {
+  main {
+    width: 100%;
+  }
+  main #card {
+    width: 90%;
+  }
+  main #add-task {
+    width: 100%;
+  }
+  main #add-task textarea {
+    width: 90%;
+  }
+  main #add-task #addBtn {
+    width: 20%;
+    right: 5%;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1279px) and (min-height: 700px) and (max-height: 899px) {
+  main {
+    width: 100%;
+  }
+  main #card {
+    width: 90%;
+  }
+  main #add-task {
+    width: 100%;
+  }
+  main #add-task textarea {
+    width: 90%;
+  }
+  main #add-task #addBtn {
+    width: 20%;
+    right: 5%;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1919px) and (min-height: 800px) and (max-height: 1079px) {
+  main {
+    width: 100%;
+  }
+  main #card {
+    width: 90%;
+  }
+  main #add-task {
+    width: 100%;
+  }
+  main #add-task textarea {
+    width: 90%;
+  }
+  main #add-task #addBtn {
+    width: 20%;
+    right: 5%;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 1920px) and (min-height: 1080px) {
+  main {
+    width: 100%;
+  }
+  main #card {
+    width: 90%;
+  }
+  main #add-task {
+    width: 100%;
+  }
+  main #add-task textarea {
+    width: 90%;
+  }
+  main #add-task #addBtn {
+    width: 20%;
+    right: 5%;
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }/*# sourceMappingURL=style.css.map */
