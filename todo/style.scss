@@ -113,7 +113,7 @@ main {
     width: 100%;
 
     #card {
-      width: 100%;
+      width: 90%;
     }
 
     #add-task {
@@ -249,6 +249,7 @@ main {
   }
 }
 
+//large screens (2k/4k)
 @media (min-width: 1920px) and (min-height: 1080px) {
   main {
     width: 100%;
