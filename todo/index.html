@@ -12,6 +12,16 @@
   </head>
   <body>
     <main>
+      <div class="sidebar" id="sidebar">
+    <div class="toggle-btn" id="toggleBtn">
+      <span class="icon open-icon">☰</span>
+      <span class="icon close-icon">✖</span>
+    </div>
+
+    <h3>Dates</h3>
+    <ul class="date-list" id="dateList"></ul>
+  </div>
+
       <div id="card">
         <div id="header">
           <h3>To-do</h3>
@@ -20,7 +30,7 @@
 
         <div id="add-task">
           <textarea id="taskInput" placeholder="Add your task"></textarea>
-          <button id="addBtn">Add</button>
+          <button id="addBtn"><i class="ri-add-line"></i>Add</button>
         </div>
 
         <div id="task-list"></div>
@@ -30,3 +40,5 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
