@@ -1,145 +1,143 @@
 const addBtn = document.getElementById("addBtn");
 const input = document.getElementById("taskInput");
 const taskList = document.getElementById("task-list");
+const dateList = document.getElementById("dateList");
 
-// Get tasks from localStorage
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
-/* -------------------------
-   Save tasks to localStorage
--------------------------- */
-function saveTasks() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-}
-
-/* -------------------------
-   Add task to array
--------------------------- */
-function addTask(task) {
-  tasks.push(task);
-  saveTasks();
-}
-
-/* -------------------------
-   Delete task from array
--------------------------- */
-function deleteTask(id) {
-  tasks = tasks.filter(task => task.id !== id);
-  saveTasks();
-}
-
-/* -------------------------
-   Clear all tasks (optional)
--------------------------- */
-function clearTasks() {
-  localStorage.removeItem("tasks");
-  tasks = [];
-  taskList.innerHTML = "";
-}
-
-/* -------------------------
-   Render tasks on UI
--------------------------- */
-function renderTasks() {
-  taskList.innerHTML = "";
-
-  tasks.forEach(task => {
-    const taskRow = document.createElement("div");
-    taskRow.className = "task-item";
-
-    taskRow.innerHTML = `
-      <p class="task-text">${task.text}</p>
-      <span class="delete">✕</span>
-    `;
-
-    // delete button
-    taskRow.querySelector(".delete").addEventListener("click", () => {
-      deleteTask(task.id);
-      renderTasks();
-    });
-
-    taskList.appendChild(taskRow);
-  });
-}
-
-/* -------------------------
-   Add button click
--------------------------- */
-addBtn.addEventListener("click", () => {
-  const value = input.value.trim();
-  if (value === "") return;
-
-  const task = {
-    id: Date.now(),   // unique id
-    text: value
-  };
-
-  addTask(task);
-  renderTasks();
-
-  input.value = "";
-});
-
-/* -------------------------
-   Load tasks on page refresh
--------------------------- */
-renderTasks();
-
-
-const sidebar = document.getElementById('sidebar');
-const toggleBtn = document.getElementById('toggleBtn');
-const openIcon = document.querySelector('.open-icon');
-const closeIcon = document.querySelector('.close-icon');
-const dateList = document.getElementById('dateList');
-
-// Function to get today's date as YYYY-MM-DD
+// Get today's date as YYYY-MM-DD format
 function getToday() {
   const today = new Date();
-  return today.toISOString().split('T')[0];
+  return today.toISOString().split("T")[0]; // Format: YYYY-MM-DD
 }
 
-// Initialize data in localStorage
-let todos = JSON.parse(localStorage.getItem('todos')) || {};
+// Initialize tasks in localStorage
+let todos = JSON.parse(localStorage.getItem("todos")) || {};
+
+// Function to add a task for a specific date
+function addTaskForDate(task, date) {
+  if (!todos[date]) {
+    todos[date] = []; // Initialize array if no tasks exist for this date
+  }
+  todos[date].push(task);
+  localStorage.setItem("todos", JSON.stringify(todos));
+
+  // Only render the date if it has tasks
+  if (todos[date].length > 0) {
+    renderDates(); // Update the sidebar with dates that have tasks
+    renderTasksForDate(date); // Immediately show tasks in the card
+  }
+}
+
+// Function to render tasks for a selected date
+function renderTasksForDate(date) {
+  taskList.innerHTML = ""; // Clear current tasks
+
+  // Render tasks for the selected date
+  if (todos[date] && todos[date].length > 0) {
+    todos[date].forEach((task) => {
+      const taskRow = document.createElement("div");
+      taskRow.className = "task-item";
+      taskRow.innerHTML = `
+        <p class="task-text">${task.text}</p>
+        <span class="edit">
+          <i class="ri-edit-line"></i>
+        </span>
+        <span class="delete">✕</span>
+      `;
+
+      // Edit icon event
+      taskRow.querySelector(".edit").addEventListener("click", () => {
+        editTask(date, task.id);
+      });
+
+      // Delete button event
+      taskRow.querySelector(".delete").addEventListener("click", () => {
+        deleteTask(date, task.id);
+        renderTasksForDate(date); // Re-render the tasks for the current date
+      });
+
+      taskList.appendChild(taskRow);
+    });
+  } else {
+    taskList.innerHTML = "<p>No tasks for this date.</p>";
+  }
+}
+
+// Function to delete task from a date
+function deleteTask(date, taskId) {
+  todos[date] = todos[date].filter((task) => task.id !== taskId);
+  localStorage.setItem("todos", JSON.stringify(todos));
+
+  // Re-render the tasks for the current date after deletion
+  renderTasksForDate(date);
+}
+
+// Function to edit a task for a specific date
+function editTask(date, taskId) {
+  const task = todos[date].find((task) => task.id === taskId);
+  if (task) {
+    const newTaskText = prompt("Edit your task:", task.text);
+    if (newTaskText && newTaskText.trim() !== "") {
+      task.text = newTaskText.trim(); // Update the task text
+      localStorage.setItem("todos", JSON.stringify(todos)); // Save updated tasks
+
+      renderTasksForDate(date); // Re-render tasks for the current date
+    }
+  }
+}
 
 // Function to render dates in the sidebar
 function renderDates() {
-  dateList.innerHTML = ''; // Clear the current list
-  Object.keys(todos).sort().forEach(date => {
-    const li = document.createElement('li');
-    li.textContent = date;
+  dateList.innerHTML = ""; // Clear current date list
 
-    // Highlight the date if it has tasks
-    if (todos[date].length > 0) {
-      li.classList.add('has-todo');
-    }
+  // Sort and render dates in sidebar only if they have tasks
+  Object.keys(todos)
+    .sort()
+    .forEach((date) => {
+      if (todos[date].length > 0) {
+        // Only add dates that have tasks
+        const li = document.createElement("li");
+        li.textContent = date;
 
-    // Add event listener to show tasks for the clicked date
-    li.addEventListener('click', () => {
-      // Trigger the click on the date and show the tasks
-      selectedDate = date;
-      renderTodos(); // Function that would render the tasks (you can define it as needed)
+        // Add event listener to show tasks when the date is clicked
+        li.addEventListener("click", () => {
+          renderTasksForDate(date); // Show tasks for the selected date
+        });
+
+        dateList.appendChild(li); // Add the date to the sidebar list
+      }
     });
-
-    dateList.appendChild(li); // Add the date to the sidebar list
-  });
 }
 
-// Function to toggle sidebar (collapse/expand)
-toggleBtn.addEventListener('click', () => {
-  sidebar.classList.toggle('collapsed');
+// Add new task to today's date when the add button is clicked
+addBtn.addEventListener("click", () => {
+  const taskText = input.value.trim();
 
-  // Toggle between open and close icons
-  if (sidebar.classList.contains('collapsed')) {
-    openIcon.style.display = 'block';
-    closeIcon.style.display = 'none';
-  } else {
-    openIcon.style.display = 'none';
-    closeIcon.style.display = 'block';
+  // If input is empty, do not add the task and alert the user
+  if (taskText === "") {
+    alert("Please enter a valid task.");
+    return;
   }
+
+  // Create the task object only if the input is valid
+  const task = {
+    id: Date.now(), // Unique id for the task
+    text: taskText,
+  };
+
+  const today = getToday(); // Get today's date
+  addTaskForDate(task, today); // Add task to today's date
+
+  input.value = ""; // Clear the input field
+  renderDates(); // Re-render the dates in the sidebar
 });
 
-// Initialize rendering of dates
+// Initialize rendering of tasks for today and sidebar dates
 renderDates();
 
 
+const sidebar = document.getElementById("sidebar");
+const toggleBtn = document.getElementById("toggleBtn");
 
+toggleBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("collapsed");
+});
