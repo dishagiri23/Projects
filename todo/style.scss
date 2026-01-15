@@ -29,7 +29,10 @@ main {
     color: #fff;
     padding: 10px;
     transition: width 0.3s;
-    overflow: hidden;
+    // overflow: hidden;
+    overflow-y: auto;
+  overflow-x: hidden;
+
 
     &.collapsed {
       width: 6vh;
@@ -42,11 +45,7 @@ main {
       }
 
       .open-icon {
-        display: block;
-      }
-
-      .close-icon {
-        display: none;
+        display: inline-block;
       }
     }
 
@@ -59,8 +58,6 @@ main {
 
       .open-icon {
         display: none; // menu icon hidden when sidebar is open
-        font-size: 24px;
-        font-weight: bold;
       }
 
       .close-icon {
@@ -73,18 +70,23 @@ main {
     &.collapsed {
       .open-icon {
         display: block; // show menu icon when sidebar is collapsed
+        font-size: 24px;
+        font-weight: bold;
       }
 
       .close-icon {
         display: none; // hide cross icon when sidebar is collapsed
       }
     }
-    h3 {
-      margin-top: 0;
-      font-size: 20px;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
 
+    // h3 {
+    //   // margin-top: 0;
+    //   // font-size: 20px;
+    //   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    // }
+
+    //completed
+    
     .date-list {
       list-style: none;
       padding: 0;

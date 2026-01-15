@@ -35,7 +35,8 @@ main .sidebar {
   color: #fff;
   padding: 10px;
   transition: width 0.3s;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 main .sidebar.collapsed {
   width: 6vh;
@@ -48,10 +49,7 @@ main .sidebar.collapsed .date-list {
   display: none;
 }
 main .sidebar.collapsed .open-icon {
-  display: block;
-}
-main .sidebar.collapsed .close-icon {
-  display: none;
+  display: inline-block;
 }
 main .sidebar .toggle-btn {
   cursor: pointer;
@@ -62,8 +60,6 @@ main .sidebar .toggle-btn {
 }
 main .sidebar .toggle-btn .open-icon {
   display: none;
-  font-size: 24px;
-  font-weight: bold;
 }
 main .sidebar .toggle-btn .close-icon {
   display: block;
@@ -72,14 +68,11 @@ main .sidebar .toggle-btn .close-icon {
 }
 main .sidebar.collapsed .open-icon {
   display: block;
+  font-size: 24px;
+  font-weight: bold;
 }
 main .sidebar.collapsed .close-icon {
   display: none;
-}
-main .sidebar h3 {
-  margin-top: 0;
-  font-size: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 main .sidebar .date-list {
   list-style: none;
