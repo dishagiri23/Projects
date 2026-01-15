@@ -19,6 +19,12 @@ main {
   background-color: rgb(131, 131, 60);
   position: relative;
   width: 100%;
+  /* prevent card from moving; scroll only inside it */
+  /* keep header fixed inside card (optional but recommended) */
+  /* sidebar scroll without moving top */
+  /* keep tasks below header, never behind it */
+  /* enhanced, clean header UI */
+  /* make sidebar always on top of card, header, tasks */
 }
 main .sidebar {
   position: absolute;
@@ -91,6 +97,63 @@ main .sidebar .date-list li.has-todo {
 main .sidebar .date-list li:hover {
   background: rgba(112, 130, 149, 0.4666666667);
 }
+main main {
+  align-items: flex-start;
+}
+main #card {
+  max-height: 80vh; /* fixed visible height */
+  overflow-y: auto; /* scroll tasks inside card */
+}
+main #header {
+  position: sticky;
+  top: 0;
+  background: inherit;
+  z-index: 1;
+}
+main .sidebar {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+main #header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: inherit;
+}
+main #task-list {
+  padding-top: 20px; /* space below header */
+}
+main #header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 20px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, rgba(255, 243, 214, 0.5254901961), rgba(255, 226, 163, 0.262745098));
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+}
+main .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+main #header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+main #header i {
+  font-size: 22px;
+  color: #ff9f1c;
+}
 main h3 {
   margin-top: 30px;
   padding-left: 10px;
@@ -112,7 +175,6 @@ main h2 {
   border-radius: 20px;
   padding-bottom: 20px;
   padding: 20px;
-  margin-left: 30px;
 }
 
 #header {
@@ -144,6 +206,7 @@ main h2 {
   resize: none;
   height: 60px;
   font-size: 16px;
+  width: 100%;
 }
 
 #add-task textarea:focus {
@@ -182,6 +245,11 @@ main h2 {
   align-items: center;
   justify-content: space-between;
   border: 3px solid salmon;
+  position: relative;
+}
+.task-item .edit {
+  position: absolute;
+  left: 70%;
 }
 
 .task-item .task-text {
@@ -205,7 +273,8 @@ main h2 {
     width: 100%;
   }
   main #card {
-    width: 70%;
+    width: 90%;
+    position: fixed;
   }
   main #add-task {
     width: 100%;
@@ -214,7 +283,6 @@ main h2 {
     width: 90%;
   }
   main #add-task #addBtn {
-    width: 30vh;
     right: 5%;
     padding: 20px 30px;
     display: flex;

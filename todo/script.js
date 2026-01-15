@@ -141,3 +141,9 @@ const toggleBtn = document.getElementById("toggleBtn");
 toggleBtn.addEventListener("click", () => {
   sidebar.classList.toggle("collapsed");
 });
+
+// refresh reset (sidebar hidden on reload)
+window.addEventListener("load", () => {
+  document.getElementById("sidebar").classList.add("collapsed");
+});
+
