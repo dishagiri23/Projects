@@ -134,7 +134,6 @@ addBtn.addEventListener("click", () => {
 // Initialize rendering of tasks for today and sidebar dates
 renderDates();
 
-
 const sidebar = document.getElementById("sidebar");
 const toggleBtn = document.getElementById("toggleBtn");
 
@@ -146,4 +145,3 @@ toggleBtn.addEventListener("click", () => {
 window.addEventListener("load", () => {
   document.getElementById("sidebar").classList.add("collapsed");
 });
-

@@ -73,7 +73,6 @@ main {
     &.collapsed {
       .open-icon {
         display: block; // show menu icon when sidebar is collapsed
-
       }
 
       .close-icon {
@@ -107,89 +106,79 @@ main {
     }
   }
 
-
   /* prevent card from moving; scroll only inside it */
-main {
-  align-items: flex-start;
-}
+  main {
+    align-items: flex-start;
+  }
 
-#card {
-  max-height: 80vh;      /* fixed visible height */
-  overflow-y: auto;      /* scroll tasks inside card */
-}
+  #card {
+    max-height: 80vh; /* fixed visible height */
+    overflow-y: auto; /* scroll tasks inside card */
+  }
 
-/* keep header fixed inside card (optional but recommended) */
-#header {
-  position: sticky;
-  top: 0;
-  background: inherit;
-  z-index: 1;
-}
+  /* keep header fixed inside card (optional but recommended) */
+  #header {
+    position: sticky;
+    top: 0;
+    background: inherit;
+    z-index: 1;
+  }
 
-/* sidebar scroll without moving top */
-.sidebar {
-  max-height: 100vh;
-  overflow-y: auto;
-}
+  /* sidebar scroll without moving top */
+  .sidebar {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
 
+  /* keep tasks below header, never behind it */
+  #header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: inherit;
+  }
 
+  #task-list {
+    padding-top: 20px; /* space below header */
+  }
 
-/* keep tasks below header, never behind it */
-#header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: inherit;
-}
+  /* enhanced, clean header UI */
+  #header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 
-#task-list {
-  padding-top: 20px;   /* space below header */
-}
+    padding: 16px 20px;
+    margin-bottom: 10px;
 
+    background: linear-gradient(135deg, #fff3d686, #ffe2a343);
+    border-radius: 16px;
 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(6px);
+  }
+  /* make sidebar always on top of card, header, tasks */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
 
+  #header h3 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
 
-/* enhanced, clean header UI */
-#header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-
-  padding: 16px 20px;
-  margin-bottom: 10px;
-
-  background: linear-gradient(135deg, #fff3d686, #ffe2a343);
-  border-radius: 16px;
-
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(6px);
-}
-/* make sidebar always on top of card, header, tasks */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-}
-
-
-#header h3 {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-#header i {
-  font-size: 22px;
-  color: #ff9f1c;
-}
-
-
-
+  #header i {
+    font-size: 22px;
+    color: #ff9f1c;
+  }
 
   h3 {
     margin-top: 30px;
@@ -289,11 +278,10 @@ main {
   border: 3px solid salmon;
   position: relative;
 
-  .edit{
+  .edit {
     position: absolute;
     left: 70%;
   }
-
 }
 
 .task-item .task-text {
@@ -484,4 +472,3 @@ main {
     }
   }
 }
-
