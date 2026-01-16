@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  background-color: #EFF7FB;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+main #header {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+main #header .svg {
+  color: #19a2e6;
+  font-size: 50px;
+}
+main #header h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f3347;
+}
+main form {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+main form input {
+  padding: 15px;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid rgba(128, 128, 128, 0.414);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+main form input:focus {
+  outline: none;
+  border: 2px solid #19A2E6;
+  box-shadow: 0 0 0 4px rgba(42, 168, 255, 0.25);
+  outline: 1px solid #2aa8ff;
+}
+main form button {
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 10px;
+  background-color: #84ccf0;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+main form button #svg1 {
+  font-size: 50px;
+}
+main p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 70px;
+  color: #668099;
+}
+main #card {
+  width: 23%;
+  background-color: #FFFFFF;
+  min-height: 55vh;
+  border-radius: 20px;
+  margin-top: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(128, 128, 128, 0.414);
+  opacity: 0;
+}/*# sourceMappingURL=style.css.map */
