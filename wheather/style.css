@@ -11,8 +11,8 @@ body {
 }
 
 main {
-  width: 100%;
-  background-color: #EFF7FB;
+  min-width: 100%;
+  background-color: #eff7fb;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -26,11 +26,12 @@ main #header {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
-main #header .svg {
+main #header svg {
   color: #19a2e6;
-  font-size: 50px;
+  width: 7%;
+  min-height: 7vh;
 }
 main #header h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -50,10 +51,11 @@ main form input {
   border-radius: 15px;
   border: 1px solid rgba(128, 128, 128, 0.414);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: transparent;
 }
 main form input:focus {
   outline: none;
-  border: 2px solid #19A2E6;
+  border: 2px solid #19a2e6;
   box-shadow: 0 0 0 4px rgba(42, 168, 255, 0.25);
   outline: 1px solid #2aa8ff;
 }
@@ -61,16 +63,18 @@ main form button {
   padding: 10px 30px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 5px;
   border-radius: 10px;
   background-color: #84ccf0;
   border: none;
   color: white;
+  width: 35%;
   cursor: pointer;
+  min-height: 6vh;
 }
-main form button #svg1 {
-  font-size: 50px;
+main form button svg {
+  min-height: 1vh;
 }
 main p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -78,12 +82,79 @@ main p {
   color: #668099;
 }
 main #card {
-  width: 23%;
-  background-color: #FFFFFF;
-  min-height: 55vh;
+  width: 20%;
+  background-color: #ffffff;
   border-radius: 20px;
-  margin-top: 30px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(128, 128, 128, 0.414);
+  margin-top: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   opacity: 0;
+  transition: opacity 0.5s ease;
+  min-height: 20vh;
+}
+main #card #cityName {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1f3347;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+main #card #weatherIcon {
+  width: 70px;
+  height: 70px;
+  margin: 10px 0;
+  color: #6c7b8a;
+}
+main #card #description {
+  margin-top: 5px;
+  font-size: 2rem;
+  color: #6c7b8a;
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+}
+main #card .temp {
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+  color: #1f3347;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+main #card .temp span svg {
+  color: #19a2e6;
+  width: 100%;
+}
+main #card .extra {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 5vh;
+}
+main #card .extra .box {
+  background-color: #f0f5f9;
+  width: 50%;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+  min-height: 20vh;
+}
+main #card .extra .box .label {
+  font-size: 0.85rem;
+  color: #6c7b8a;
+  margin-bottom: 5px;
+}
+main #card .extra .box p:last-child {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f3347;
 }/*# sourceMappingURL=style.css.map */
