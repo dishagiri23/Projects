@@ -11,11 +11,11 @@ body {
 }
 
 main {
-  min-width: 100%;
+  width: 100%;
   background-color: #eff7fb;
   position: fixed;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
 
@@ -26,13 +26,14 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    gap: 5px;
+    margin-top: 30px;
+    // margin-top: 20px;
 
     svg {
       color: #19a2e6;
-      width: 7%;
-      min-height: 7vh;
+      width: 10%;
+      min-height: 8vh;
     }
 
     h1 {
@@ -42,7 +43,7 @@ main {
   }
 
   form {
-    width: 30%;
+    min-width: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +52,7 @@ main {
 
     input {
       padding: 15px;
-      width: 100%;
+      min-width: 40vh;
       border-radius: 15px;
       border: 1px solid rgba(128, 128, 128, 0.414);
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -67,16 +68,16 @@ main {
 
     button {
       // margin-left: 20px;
-      padding: 10px 30px;
+      padding: 10px 5px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       gap: 5px;
       border-radius: 10px;
       background-color: #84ccf0;
       border: none;
       color: white;
-      width: 35%;
+      width: 22%;
       cursor: pointer;
       min-height: 6vh;
 
@@ -89,38 +90,39 @@ main {
 
   p {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: 70px;
+    margin-top: 20px;
     color: #668099;
   }
 
   #card {
-    width: 20%; // adjust size as needed
+    min-width: 50vh; // adjust size as needed
     background-color: #ffffff;
     border-radius: 20px;
     margin-top: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(128, 128, 128, 0.2);
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     opacity: 0; // JS will handle fade-in
     transition: opacity 0.5s ease;
-    min-height: 20vh;
+    // min-height: 20vh;
+    min-height: auto;
 
     #cityName {
-      font-size: 1.3rem;
+      font-size: 2rem;
       font-weight: 600;
-      margin-bottom: 10px;
+      // margin-bottom: 10px;
       color: #1f3347;
       text-align: center;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     #weatherIcon {
-      width: 70px;
-      height: 70px;
-      margin: 10px 0;
+      width: 45%;
+      height: 45%;
+      // margin: 5px 0;
       color: #6c7b8a;
     }
 
@@ -146,7 +148,10 @@ main {
       span {
         svg {
           color: #19a2e6;
-          width: 100%;
+          // width: 2rem; /* Increased size of svg inside temp */
+          // height: 2rem;
+          width: 1.5rem;   /* Set the width of the SVG */
+  height: 1.5rem;  /* Set the height of the SVG */
         }
       }
     }
@@ -155,21 +160,19 @@ main {
       width: 100%;
       display: flex;
       justify-content: space-between;
-      gap: 10px;
-      min-height: 5vh;
+      gap: 5px;
+      min-height: auto;
+
       .box {
         background-color: #f0f5f9;
-        // flex: 1;
-        width: 50%;
-        padding: 10px;
+        width: 50%; /* Adjust width */
+        padding: 10px; /* Adjust padding */
         border-radius: 15px;
         text-align: center;
-        min-height: 20vh;
-
         .label {
           font-size: 0.85rem;
           color: #6c7b8a;
-          margin-bottom: 5px;
+          // margin-bottom: 5px;
         }
 
         p:last-child {
@@ -179,5 +182,52 @@ main {
         }
       }
     }
+  }
+}
+
+//phone
+@media (max-width: 500px) and (max-height: 799px) {
+  main {
+    width: 100%;
+
+    #header {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      svg {
+        width: 10%;
+        min-height: 10vh;
+      }
+
+      h1 {
+        white-space: nowrap;
+      }
+    }
+
+    form {
+      min-width: 5vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+
+      input{
+        min-width: 1vh;
+
+      }
+
+       button{
+      width: 2vh;
+      padding: 5px 5px;
+
+    }
+    }
+
+#card{
+  min-width: 15vh;
+}
   }
 }

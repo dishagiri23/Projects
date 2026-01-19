@@ -11,11 +11,11 @@ body {
 }
 
 main {
-  min-width: 100%;
+  width: 100%;
   background-color: #eff7fb;
   position: fixed;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
@@ -25,20 +25,20 @@ main #header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
+  gap: 5px;
+  margin-top: 30px;
 }
 main #header svg {
   color: #19a2e6;
-  width: 7%;
-  min-height: 7vh;
+  width: 10%;
+  min-height: 8vh;
 }
 main #header h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #1f3347;
 }
 main form {
-  width: 30%;
+  min-width: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,7 +47,7 @@ main form {
 }
 main form input {
   padding: 15px;
-  width: 100%;
+  min-width: 40vh;
   border-radius: 15px;
   border: 1px solid rgba(128, 128, 128, 0.414);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -60,16 +60,16 @@ main form input:focus {
   outline: 1px solid #2aa8ff;
 }
 main form button {
-  padding: 10px 30px;
+  padding: 10px 5px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 5px;
   border-radius: 10px;
   background-color: #84ccf0;
   border: none;
   color: white;
-  width: 35%;
+  width: 22%;
   cursor: pointer;
   min-height: 6vh;
 }
@@ -78,36 +78,34 @@ main form button svg {
 }
 main p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: 70px;
+  margin-top: 20px;
   color: #668099;
 }
 main #card {
-  width: 20%;
+  min-width: 50vh;
   background-color: #ffffff;
   border-radius: 20px;
   margin-top: 20px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(128, 128, 128, 0.2);
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   opacity: 0;
   transition: opacity 0.5s ease;
-  min-height: 20vh;
+  min-height: auto;
 }
 main #card #cityName {
-  font-size: 1.3rem;
+  font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 10px;
   color: #1f3347;
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 main #card #weatherIcon {
-  width: 70px;
-  height: 70px;
-  margin: 10px 0;
+  width: 45%;
+  height: 45%;
   color: #6c7b8a;
 }
 main #card #description {
@@ -131,30 +129,65 @@ main #card .temp {
 }
 main #card .temp span svg {
   color: #19a2e6;
-  width: 100%;
+  width: 1.5rem; /* Set the width of the SVG */
+  height: 1.5rem; /* Set the height of the SVG */
 }
 main #card .extra {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  min-height: 5vh;
+  gap: 5px;
+  min-height: auto;
 }
 main #card .extra .box {
   background-color: #f0f5f9;
-  width: 50%;
-  padding: 10px;
+  width: 50%; /* Adjust width */
+  padding: 10px; /* Adjust padding */
   border-radius: 15px;
   text-align: center;
-  min-height: 20vh;
 }
 main #card .extra .box .label {
   font-size: 0.85rem;
   color: #6c7b8a;
-  margin-bottom: 5px;
 }
 main #card .extra .box p:last-child {
   font-size: 1rem;
   font-weight: 600;
   color: #1f3347;
+}
+
+@media (max-width: 500px) and (max-height: 799px) {
+  main {
+    width: 100%;
+  }
+  main #header {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  main #header svg {
+    width: 10%;
+    min-height: 10vh;
+  }
+  main #header h1 {
+    white-space: nowrap;
+  }
+  main form {
+    min-width: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  main form input {
+    min-width: 1vh;
+  }
+  main form button {
+    width: 2vh;
+    padding: 5px 5px;
+  }
+  main #card {
+    min-width: 15vh;
+  }
 }/*# sourceMappingURL=style.css.map */
