@@ -13,27 +13,24 @@ body {
 main {
   width: 100%;
   background-color: #eff7fb;
-  position: fixed;
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
-
   min-height: 100vh;
+  padding: 15px;
 
   #header {
-    width: 50%;
+    // width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    margin-top: 30px;
-    // margin-top: 20px;
+    // margin-top: 25px;
 
     svg {
       color: #19a2e6;
-      width: 10%;
-      min-height: 8vh;
+      width: 20%;
+      min-height: 10vh;
     }
 
     h1 {
@@ -43,31 +40,31 @@ main {
   }
 
   form {
-    min-width: 70vh;
+    width: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 30px;
+    margin-top: 10px;
     gap: 10px;
+    justify-content: center;
 
     input {
-      padding: 15px;
-      min-width: 40vh;
+      padding: 18px 25px;
+      width: 50%;
       border-radius: 15px;
       border: 1px solid rgba(128, 128, 128, 0.414);
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       background-color: transparent;
+      font-size: 1rem;
     }
 
     input:focus {
-      outline: none;
+      // outline: none;
       border: 2px solid #19a2e6;
       box-shadow: 0 0 0 4px rgba(42, 168, 255, 0.25);
       outline: 1px solid #2aa8ff;
     }
 
     button {
-      // margin-left: 20px;
       padding: 10px 5px;
       display: flex;
       align-items: center;
@@ -77,14 +74,14 @@ main {
       background-color: #84ccf0;
       border: none;
       color: white;
-      width: 22%;
+      width: 20%;
       cursor: pointer;
       min-height: 6vh;
+      font-size: 1rem;
 
-      svg {
-        // width: 10%;
-        min-height: 1vh;
-      }
+      // svg {
+      //   min-height: 1vh;
+      // }
     }
   }
 
@@ -95,39 +92,35 @@ main {
   }
 
   #card {
-    min-width: 50vh; // adjust size as needed
+    width: 35%;
     background-color: #ffffff;
     border-radius: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(128, 128, 128, 0.2);
-    padding: 15px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 0; // JS will handle fade-in
+    opacity: 0;
     transition: opacity 0.5s ease;
-    // min-height: 20vh;
-    min-height: auto;
 
     #cityName {
       font-size: 2rem;
       font-weight: 600;
-      // margin-bottom: 10px;
       color: #1f3347;
       text-align: center;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
 
     #weatherIcon {
-      width: 45%;
-      height: 45%;
-      // margin: 5px 0;
+      width: 20%;
+      height: 20%;
       color: #6c7b8a;
     }
 
     #description {
-      margin-top: 5px;
+      margin-top: 0px;
       font-size: 2rem;
       color: #6c7b8a;
       margin-bottom: 15px;
@@ -138,20 +131,17 @@ main {
 
     .temp {
       font-size: 2rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 5px;
+      font-weight: 500;
       margin-bottom: 20px;
       color: #1f3347;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
       span {
+
         svg {
           color: #19a2e6;
-          // width: 2rem; /* Increased size of svg inside temp */
-          // height: 2rem;
-          width: 1.5rem;   /* Set the width of the SVG */
-  height: 1.5rem;  /* Set the height of the SVG */
+          width: 1.5rem;
+          height: 1.5rem;
         }
       }
     }
@@ -159,75 +149,26 @@ main {
     .extra {
       width: 100%;
       display: flex;
-      justify-content: space-between;
-      gap: 5px;
-      min-height: auto;
+      gap: 8px;
+
 
       .box {
         background-color: #f0f5f9;
-        width: 50%; /* Adjust width */
-        padding: 10px; /* Adjust padding */
+        width: 50%;
+        padding: 10px;
         border-radius: 15px;
         text-align: center;
         .label {
-          font-size: 0.85rem;
+          font-size: 1rem;
           color: #6c7b8a;
-          // margin-bottom: 5px;
         }
 
         p:last-child {
-          font-size: 1rem;
+          font-size: 1.5rem;
           font-weight: 600;
           color: #1f3347;
         }
       }
     }
-  }
-}
-
-//phone
-@media (max-width: 500px) and (max-height: 799px) {
-  main {
-    width: 100%;
-
-    #header {
-      width: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      svg {
-        width: 10%;
-        min-height: 10vh;
-      }
-
-      h1 {
-        white-space: nowrap;
-      }
-    }
-
-    form {
-      min-width: 5vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-
-
-      input{
-        min-width: 1vh;
-
-      }
-
-       button{
-      width: 2vh;
-      padding: 5px 5px;
-
-    }
-    }
-
-#card{
-  min-width: 15vh;
-}
   }
 }
