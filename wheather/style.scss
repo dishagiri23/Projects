@@ -11,7 +11,7 @@ body {
 }
 
 main {
-  width: 100%;
+  min-width: 100vh;
   background-color: #eff7fb;
   display: flex;
   flex-direction: column;
@@ -20,17 +20,16 @@ main {
   padding: 15px;
 
   #header {
-    // width: 50%;
+    min-width: 30vh;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    // margin-top: 25px;
 
     svg {
       color: #19a2e6;
-      width: 20%;
-      min-height: 10vh;
+      min-width: 7vh;
+      min-height: 9vh;
     }
 
     h1 {
@@ -40,16 +39,16 @@ main {
   }
 
   form {
-    width: 50%;
+    min-width: 40vh;
     display: flex;
     align-items: center;
     margin-top: 10px;
-    gap: 10px;
+    gap: 5px;
     justify-content: center;
 
     input {
-      padding: 18px 25px;
-      width: 50%;
+      padding: 15px 25px;
+      min-width: 25vh;
       border-radius: 15px;
       border: 1px solid rgba(128, 128, 128, 0.414);
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -58,7 +57,6 @@ main {
     }
 
     input:focus {
-      // outline: none;
       border: 2px solid #19a2e6;
       box-shadow: 0 0 0 4px rgba(42, 168, 255, 0.25);
       outline: 1px solid #2aa8ff;
@@ -74,14 +72,10 @@ main {
       background-color: #84ccf0;
       border: none;
       color: white;
-      width: 20%;
+      min-width: 15vh;
       cursor: pointer;
       min-height: 6vh;
       font-size: 1rem;
-
-      // svg {
-      //   min-height: 1vh;
-      // }
     }
   }
 
@@ -92,7 +86,7 @@ main {
   }
 
   #card {
-    width: 35%;
+    min-width: 60vh;
     background-color: #ffffff;
     border-radius: 20px;
     margin-top: 30px;
@@ -137,7 +131,6 @@ main {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
       span {
-
         svg {
           color: #19a2e6;
           width: 1.5rem;
@@ -150,7 +143,6 @@ main {
       width: 100%;
       display: flex;
       gap: 8px;
-
 
       .box {
         background-color: #f0f5f9;
@@ -168,6 +160,44 @@ main {
           font-weight: 600;
           color: #1f3347;
         }
+      }
+    }
+  }
+}
+
+//phones
+@media (max-width: 500.99px) {
+  main {
+    min-width: 50vh;
+    padding: 10px 10px;
+
+    form {
+      flex-direction: column;
+      gap: 10px;
+
+      input {
+        min-width: 30vh;
+      }
+
+      button {
+        min-width: 25vh;
+      }
+    }
+
+    #card {
+      min-width: 40vh;
+    }
+  }
+}
+
+@media (min-width: 501px) and (max-width: 1024px) {
+  main {
+    width: 100%;
+
+    #header {
+      width: 100%;
+      svg {
+        min-width: 7vh;
       }
     }
   }
