@@ -167,9 +167,13 @@ main {
 
 //phones
 @media (max-width: 500.99px) {
-  main {
+ body{
+  overflow: hidden;
+
+   main {
     min-width: 50vh;
     padding: 10px 10px;
+
 
     form {
       flex-direction: column;
@@ -188,6 +192,7 @@ main {
       min-width: 40vh;
     }
   }
+ }
 }
 
 @media (min-width: 501px) and (max-width: 1024px) {

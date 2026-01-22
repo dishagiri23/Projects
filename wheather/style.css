@@ -147,21 +147,24 @@ main #card .extra .box p:last-child {
 }
 
 @media (max-width: 500.99px) {
-  main {
+  body {
+    overflow: hidden;
+  }
+  body main {
     min-width: 50vh;
     padding: 10px 10px;
   }
-  main form {
+  body main form {
     flex-direction: column;
     gap: 10px;
   }
-  main form input {
+  body main form input {
     min-width: 30vh;
   }
-  main form button {
+  body main form button {
     min-width: 25vh;
   }
-  main #card {
+  body main #card {
     min-width: 40vh;
   }
 }
