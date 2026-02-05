@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+}
+main #main-container {
+  display: flex;
+  width: 100%;
+  min-height: inherit;
+}
+main #main-container .same {
+  height: 90vh;
+  width: 25%;
+  padding: 30px;
+  text-align: center;
+}
+main #main-container #container1 {
+  background-color: #7ce58d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* Hidden .svg-div by default */
+  /* When #container1 is hovered, show the .svg-div with a fade-in effect */
+}
+main #main-container #container1 .svg-div {
+  margin-top: 30px;
+  position: absolute;
+  top: 20px;
+  left: 5%;
+  width: 100%;
+  display: none; /* Hidden initially */
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.3s ease-in-out; /* Apply smooth fade-in transition */
+}
+main #main-container #container1:hover .svg-div {
+  display: block; /* Make the svg-div visible */
+  opacity: 1; /* Fade in */
+}
+main #main-container #container1 .icon3 {
+  display: none;
+}
+main #main-container #container1 svg {
+  width: 17%;
+  min-height: 7vh;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: rgba(26, 26, 46, 0.082);
+}
+main #main-container #container1 .heading-para {
+  text-align: center;
+  position: relative;
+}
+main #main-container #container1 .heading-para h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a1a2e;
+}
+main #main-container #container1 .heading-para p {
+  margin: 5px 0;
+  color: #1a1a2e;
+  font-size: 14px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0.5;
+}
+main #main-container #container2 {
+  background-color: #52dca2;
+}
+main #main-container #container3 {
+  background-color: #7ce5e5;
+}
+main #main-container #container4 {
+  background-color: #52a3dc;
+}
+main #main-container #container5 {
+  background-color: #7c8ee5;
+}/*# sourceMappingURL=style.css.map */

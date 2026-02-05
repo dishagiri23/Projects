@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+
+  #main-container {
+    display: flex;
+    width: 100%;
+    min-height: inherit;
+
+    .same {
+        height: 90vh;
+      width: 25%;
+      padding: 30px;
+      text-align: center;
+    }
+
+    #container1 {
+      background-color: #7ce58d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      /* Hidden .svg-div by default */
+      .svg-div {
+        margin-top: 30px;
+        position: absolute;
+        top: 20px;
+        left: 5%;
+        width: 100%;
+        display: none; /* Hidden initially */
+        opacity: 0; /* Initially invisible */
+        transition: opacity 0.3s ease-in-out; /* Apply smooth fade-in transition */
+      }
+
+      /* When #container1 is hovered, show the .svg-div with a fade-in effect */
+      &:hover .svg-div {
+        display: block; /* Make the svg-div visible */
+        opacity: 1; /* Fade in */
+      }
+
+      .icon3 {
+        display: none;
+      }
+
+      svg {
+        width: 17%;
+        min-height: 7vh;
+        border-radius: 50%;
+        padding: 10px;
+        background-color: rgba(26, 26, 46, 0.082);
+      }
+
+      .heading-para {
+        text-align: center;
+        position: relative;
+
+        h1 {
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          color: #1a1a2e;
+        }
+
+        p {
+          margin: 5px 0;
+          color: #1a1a2e;
+          font-size: 14px;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          opacity: 0.5;
+        }
+      }
+    }
+
+
+
+    #container2 {
+      background-color: #52dca2;
+    }
+
+    #container3 {
+      background-color: #7ce5e5;
+    }
+
+    #container4 {
+      background-color: #52a3dc;
+    }
+
+    #container5 {
+      background-color: #7c8ee5;
+    }
+  }
+}
+
+
