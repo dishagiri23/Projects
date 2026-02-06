@@ -20,7 +20,7 @@ main {
     min-height: inherit;
 
     .same {
-        height: 90vh;
+      height: 90vh;
       width: 25%;
       padding: 30px;
       text-align: center;
@@ -33,39 +33,46 @@ main {
       align-items: center;
       position: relative;
 
-      /* Hidden .svg-div by default */
+      /* ICON WRAPPER */
       .svg-div {
         margin-top: 30px;
         position: absolute;
         top: 20px;
-        left: 5%;
         width: 100%;
-        display: none; /* Hidden initially */
-        opacity: 0; /* Initially invisible */
-        transition: opacity 0.3s ease-in-out; /* Apply smooth fade-in transition */
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: transform 0.4s ease;
       }
 
-      /* When #container1 is hovered, show the .svg-div with a fade-in effect */
+      /* show icons on hover */
       &:hover .svg-div {
-        display: block; /* Make the svg-div visible */
-        opacity: 1; /* Fade in */
+        visibility: visible;
+        transform: translateY(0);
       }
 
-      .icon3 {
-        display: none;
+      /* keep svg-div visible when locked */
+      &.locked .svg-div {
+        visibility: visible;
+        transform: translateY(0);
       }
 
+      /* SVG COMMON STYLE */
       svg {
         width: 17%;
         min-height: 7vh;
         border-radius: 50%;
         padding: 10px;
         background-color: rgba(26, 26, 46, 0.082);
+        cursor: pointer;
       }
 
+      /* TEXT */
       .heading-para {
         text-align: center;
-        position: relative;
 
         h1 {
           font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -78,28 +85,465 @@ main {
           font-size: 14px;
           font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           opacity: 0.5;
+          transition: opacity 0.3s ease;
         }
+      }
+
+      &:hover .heading-para p {
+        opacity: 1;
+      }
+
+      /* 🔓 OPEN LOCK (default) */
+      .open-lock {
+        display: inline-block;
+      }
+
+      /* 🔒 LOCK (hidden by default) */
+      .icon3 {
+        display: none;
+      }
+
+      /* 📏 SLIDER (hover only) */
+      .lucide-sliders-horizontal {
+        display: inline-block;
+      }
+
+      /* 🔒 LOCKED STATE */
+      &.locked {
+        .open-lock {
+          display: none;
+        }
+
+        .icon3 {
+          display: inline-block;
+        }
+
+        /* hide slider when NOT hovering */
+        .lucide-sliders-horizontal {
+          display: none;
+        }
+      }
+
+      /* show slider again on hover even when locked */
+      &.locked:hover .lucide-sliders-horizontal {
+        display: inline-block;
       }
     }
 
-
-
     #container2 {
       background-color: #52dca2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      /* ICON WRAPPER */
+      .svg-div {
+        margin-top: 30px;
+        position: absolute;
+        top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: transform 0.4s ease;
+      }
+
+      /* show icons on hover */
+      &:hover .svg-div {
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* keep svg-div visible when locked */
+      &.locked .svg-div {
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* SVG COMMON STYLE */
+      svg {
+        width: 17%;
+        min-height: 7vh;
+        border-radius: 50%;
+        padding: 10px;
+        background-color: rgba(26, 26, 46, 0.082);
+        cursor: pointer;
+      }
+
+      /* TEXT */
+      .heading-para {
+        text-align: center;
+
+        h1 {
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          color: #1a1a2e;
+        }
+
+        p {
+          margin: 5px 0;
+          color: #1a1a2e;
+          font-size: 14px;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          opacity: 0.5;
+          transition: opacity 0.3s ease;
+        }
+      }
+
+      &:hover .heading-para p {
+        opacity: 1;
+      }
+
+      /* 🔓 OPEN LOCK (default) */
+      .open-lock {
+        display: inline-block;
+      }
+
+      /* 🔒 LOCK (hidden by default) */
+      .icon3 {
+        display: none;
+      }
+
+      /* 📏 SLIDER (hover only) */
+      .lucide-sliders-horizontal {
+        display: inline-block;
+      }
+
+      /* 🔒 LOCKED STATE */
+      &.locked {
+        .open-lock {
+          display: none;
+        }
+
+        .icon3 {
+          display: inline-block;
+        }
+
+        /* hide slider when NOT hovering */
+        .lucide-sliders-horizontal {
+          display: none;
+        }
+      }
+
+      /* show slider again on hover even when locked */
+      &.locked:hover .lucide-sliders-horizontal {
+        display: inline-block;
+      }
     }
 
     #container3 {
       background-color: #7ce5e5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      /* ICON WRAPPER */
+      .svg-div {
+        margin-top: 30px;
+        position: absolute;
+        top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: transform 0.4s ease;
+      }
+
+      /* show icons on hover */
+      &:hover .svg-div {
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* keep svg-div visible when locked */
+      &.locked .svg-div {
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* SVG COMMON STYLE */
+      svg {
+        width: 17%;
+        min-height: 7vh;
+        border-radius: 50%;
+        padding: 10px;
+        background-color: rgba(26, 26, 46, 0.082);
+        cursor: pointer;
+      }
+
+      /* TEXT */
+      .heading-para {
+        text-align: center;
+
+        h1 {
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          color: #1a1a2e;
+        }
+
+        p {
+          margin: 5px 0;
+          color: #1a1a2e;
+          font-size: 14px;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          opacity: 0.5;
+          transition: opacity 0.3s ease;
+        }
+      }
+
+      &:hover .heading-para p {
+        opacity: 1;
+      }
+
+      /* 🔓 OPEN LOCK (default) */
+      .open-lock {
+        display: inline-block;
+      }
+
+      /* 🔒 LOCK (hidden by default) */
+      .icon3 {
+        display: none;
+      }
+
+      /* 📏 SLIDER (hover only) */
+      .lucide-sliders-horizontal {
+        display: inline-block;
+      }
+
+      /* 🔒 LOCKED STATE */
+      &.locked {
+        .open-lock {
+          display: none;
+        }
+
+        .icon3 {
+          display: inline-block;
+        }
+
+        /* hide slider when NOT hovering */
+        .lucide-sliders-horizontal {
+          display: none;
+        }
+      }
+
+      /* show slider again on hover even when locked */
+      &.locked:hover .lucide-sliders-horizontal {
+        display: inline-block;
+      }
     }
 
     #container4 {
       background-color: #52a3dc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      /* ICON WRAPPER */
+      .svg-div {
+        margin-top: 30px;
+        position: absolute;
+        top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: transform 0.4s ease;
+      }
+
+      /* show icons on hover */
+      &:hover .svg-div {
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* keep svg-div visible when locked */
+      &.locked .svg-div {
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* SVG COMMON STYLE */
+      svg {
+        width: 17%;
+        min-height: 7vh;
+        border-radius: 50%;
+        padding: 10px;
+        background-color: rgba(26, 26, 46, 0.082);
+        cursor: pointer;
+      }
+
+      /* TEXT */
+      .heading-para {
+        text-align: center;
+
+        h1 {
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          color: #1a1a2e;
+        }
+
+        p {
+          margin: 5px 0;
+          color: #1a1a2e;
+          font-size: 14px;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          opacity: 0.5;
+          transition: opacity 0.3s ease;
+        }
+      }
+
+      &:hover .heading-para p {
+        opacity: 1;
+      }
+
+      /* 🔓 OPEN LOCK (default) */
+      .open-lock {
+        display: inline-block;
+      }
+
+      /* 🔒 LOCK (hidden by default) */
+      .icon3 {
+        display: none;
+      }
+
+      /* 📏 SLIDER (hover only) */
+      .lucide-sliders-horizontal {
+        display: inline-block;
+      }
+
+      /* 🔒 LOCKED STATE */
+      &.locked {
+        .open-lock {
+          display: none;
+        }
+
+        .icon3 {
+          display: inline-block;
+        }
+
+        /* hide slider when NOT hovering */
+        .lucide-sliders-horizontal {
+          display: none;
+        }
+      }
+
+      /* show slider again on hover even when locked */
+      &.locked:hover .lucide-sliders-horizontal {
+        display: inline-block;
+      }
     }
 
     #container5 {
       background-color: #7c8ee5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      /* ICON WRAPPER */
+      .svg-div {
+        margin-top: 30px;
+        position: absolute;
+        top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: transform 0.4s ease;
+      }
+
+      /* show icons on hover */
+      &:hover .svg-div {
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* keep svg-div visible when locked */
+      &.locked .svg-div {
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* SVG COMMON STYLE */
+      svg {
+        width: 17%;
+        min-height: 7vh;
+        border-radius: 50%;
+        padding: 10px;
+        background-color: rgba(26, 26, 46, 0.082);
+        cursor: pointer;
+      }
+
+      /* TEXT */
+      .heading-para {
+        text-align: center;
+
+        h1 {
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          color: #1a1a2e;
+        }
+
+        p {
+          margin: 5px 0;
+          color: #1a1a2e;
+          font-size: 14px;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          opacity: 0.5;
+          transition: opacity 0.3s ease;
+        }
+      }
+
+      &:hover .heading-para p {
+        opacity: 1;
+      }
+
+      /* 🔓 OPEN LOCK (default) */
+      .open-lock {
+        display: inline-block;
+      }
+
+      /* 🔒 LOCK (hidden by default) */
+      .icon3 {
+        display: none;
+      }
+
+      /* 📏 SLIDER (hover only) */
+      .lucide-sliders-horizontal {
+        display: inline-block;
+      }
+
+      /* 🔒 LOCKED STATE */
+      &.locked {
+        .open-lock {
+          display: none;
+        }
+
+        .icon3 {
+          display: inline-block;
+        }
+
+        /* hide slider when NOT hovering */
+        .lucide-sliders-horizontal {
+          display: none;
+        }
+      }
+
+      /* show slider again on hover even when locked */
+      &.locked:hover .lucide-sliders-horizontal {
+        display: inline-block;
+      }
     }
   }
 }
-
-
