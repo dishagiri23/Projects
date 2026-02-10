@@ -11,9 +11,7 @@ body {
 }
 
 main {
-  display: flex;
   min-height: 100vh;
-  position: relative;
 
   #main-container {
     display: flex;
@@ -21,20 +19,18 @@ main {
     min-height: inherit;
 
     .same {
-      height: 100vh;
+      min-height: inherit;
       width: 25%;
       padding: 30px;
       text-align: center;
     }
 
     #container1 {
-      background-color: #7ce58d;
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
 
-      /* ICON WRAPPER */
       .svg-div {
         margin-top: 30px;
         position: absolute;
@@ -43,25 +39,24 @@ main {
         display: flex;
         justify-content: center;
         gap: 12px;
-
         visibility: hidden;
         transform: translateY(-10px);
         transition: transform 0.4s ease;
       }
 
-      /* show icons on hover */
       &:hover .svg-div {
         visibility: visible;
         transform: translateY(0);
       }
 
-      /* keep svg-div visible when locked */
+      //couldn't understand
       &.locked .svg-div {
         visibility: visible;
         transform: translateY(0);
       }
+      //couldn't understand
 
-      /* SVG COMMON STYLE */
+
       svg {
         width: 17%;
         min-height: 7vh;
@@ -71,10 +66,7 @@ main {
         cursor: pointer;
       }
 
-      /* TEXT */
       .heading-para {
-        text-align: center;
-
         h1 {
           font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           color: #1a1a2e;
@@ -94,22 +86,11 @@ main {
         opacity: 1;
       }
 
-      /* 🔓 OPEN LOCK (default) */
-      .open-lock {
-        display: inline-block;
-      }
-
-      /* 🔒 LOCK (hidden by default) */
       .icon3 {
         display: none;
       }
 
-      /* 📏 SLIDER (hover only) */
-      .lucide-sliders-horizontal {
-        display: inline-block;
-      }
-
-      /* 🔒 LOCKED STATE */
+      //couldn't understand
       &.locked {
         .open-lock {
           display: none;
@@ -125,11 +106,11 @@ main {
         }
       }
 
-      /* show slider again on hover even when locked */
       &.locked:hover .lucide-sliders-horizontal {
         display: inline-block;
       }
     }
+    //couldn't understand
 
     #container2 {
       background-color: #52dca2;

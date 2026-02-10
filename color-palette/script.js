@@ -1,6 +1,3 @@
-/***********************
-  DOM ELEMENTS
-************************/
 const containers = document.querySelectorAll(
   "#container1, #container2, #container3, #container4, #container5",
 );
