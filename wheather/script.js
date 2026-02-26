@@ -78,3 +78,4 @@ form.addEventListener("submit", function (event) {
 
   getWeather(city);
 });
+
