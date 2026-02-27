@@ -1,0 +1,8 @@
+1. when hover on lock button then it will scale..
+2. remove the line button
+3. when hover on color code then it will scale..
+4. when i will hover below of color code then copy features will come....
+5. purple color always will stay on the color type button .....for example, if has rgb then purple will have on rgb button..
+6. present color type's text color will be always with opacity 1.
+7. when i will hover on backward button then button will scale and opacity is 1..
+8. when i will hover on lock button then it will scale...
