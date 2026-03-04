@@ -77,14 +77,14 @@ main #main-container #container1:hover .heading-para p {
 main #main-container #container1 .icon3 {
   display: none;
 }
-main #main-container #container1.locked {
-  /* hide slider when NOT hovering */
-}
 main #main-container #container1.locked .open-lock {
   display: none;
 }
 main #main-container #container1.locked .icon3 {
   display: inline-block;
+}
+main #main-container #container1.locked {
+  /* hide slider when NOT hovering */
 }
 main #main-container #container1.locked .lucide-sliders-horizontal {
   display: none;
@@ -99,15 +99,6 @@ main #main-container #container2 {
   align-items: center;
   position: relative;
   /* ICON WRAPPER */
-  /* show icons on hover */
-  /* keep svg-div visible when locked */
-  /* SVG COMMON STYLE */
-  /* TEXT */
-  /* 🔓 OPEN LOCK (default) */
-  /* 🔒 LOCK (hidden by default) */
-  /* 📏 SLIDER (hover only) */
-  /* 🔒 LOCKED STATE */
-  /* show slider again on hover even when locked */
 }
 main #main-container #container2 .svg-div {
   margin-top: 30px;
@@ -121,13 +112,22 @@ main #main-container #container2 .svg-div {
   transform: translateY(-10px);
   transition: transform 0.4s ease;
 }
+main #main-container #container2 {
+  /* show icons on hover */
+}
 main #main-container #container2:hover .svg-div {
   visibility: visible;
   transform: translateY(0);
 }
+main #main-container #container2 {
+  /* keep svg-div visible when locked */
+}
 main #main-container #container2.locked .svg-div {
   visibility: visible;
   transform: translateY(0);
+}
+main #main-container #container2 {
+  /* SVG COMMON STYLE */
 }
 main #main-container #container2 svg {
   width: 17%;
@@ -136,6 +136,9 @@ main #main-container #container2 svg {
   padding: 10px;
   background-color: rgba(26, 26, 46, 0.082);
   cursor: pointer;
+}
+main #main-container #container2 {
+  /* TEXT */
 }
 main #main-container #container2 .heading-para {
   text-align: center;
@@ -155,17 +158,26 @@ main #main-container #container2 .heading-para p {
 main #main-container #container2:hover .heading-para p {
   opacity: 1;
 }
+main #main-container #container2 {
+  /* 🔓 OPEN LOCK (default) */
+}
 main #main-container #container2 .open-lock {
   display: inline-block;
+}
+main #main-container #container2 {
+  /* 🔒 LOCK (hidden by default) */
 }
 main #main-container #container2 .icon3 {
   display: none;
 }
+main #main-container #container2 {
+  /* 📏 SLIDER (hover only) */
+}
 main #main-container #container2 .lucide-sliders-horizontal {
   display: inline-block;
 }
-main #main-container #container2.locked {
-  /* hide slider when NOT hovering */
+main #main-container #container2 {
+  /* 🔒 LOCKED STATE */
 }
 main #main-container #container2.locked .open-lock {
   display: none;
@@ -173,8 +185,14 @@ main #main-container #container2.locked .open-lock {
 main #main-container #container2.locked .icon3 {
   display: inline-block;
 }
+main #main-container #container2.locked {
+  /* hide slider when NOT hovering */
+}
 main #main-container #container2.locked .lucide-sliders-horizontal {
   display: none;
+}
+main #main-container #container2 {
+  /* show slider again on hover even when locked */
 }
 main #main-container #container2.locked:hover .lucide-sliders-horizontal {
   display: inline-block;
@@ -186,15 +204,6 @@ main #main-container #container3 {
   align-items: center;
   position: relative;
   /* ICON WRAPPER */
-  /* show icons on hover */
-  /* keep svg-div visible when locked */
-  /* SVG COMMON STYLE */
-  /* TEXT */
-  /* 🔓 OPEN LOCK (default) */
-  /* 🔒 LOCK (hidden by default) */
-  /* 📏 SLIDER (hover only) */
-  /* 🔒 LOCKED STATE */
-  /* show slider again on hover even when locked */
 }
 main #main-container #container3 .svg-div {
   margin-top: 30px;
@@ -208,13 +217,22 @@ main #main-container #container3 .svg-div {
   transform: translateY(-10px);
   transition: transform 0.4s ease;
 }
+main #main-container #container3 {
+  /* show icons on hover */
+}
 main #main-container #container3:hover .svg-div {
   visibility: visible;
   transform: translateY(0);
 }
+main #main-container #container3 {
+  /* keep svg-div visible when locked */
+}
 main #main-container #container3.locked .svg-div {
   visibility: visible;
   transform: translateY(0);
+}
+main #main-container #container3 {
+  /* SVG COMMON STYLE */
 }
 main #main-container #container3 svg {
   width: 17%;
@@ -223,6 +241,9 @@ main #main-container #container3 svg {
   padding: 10px;
   background-color: rgba(26, 26, 46, 0.082);
   cursor: pointer;
+}
+main #main-container #container3 {
+  /* TEXT */
 }
 main #main-container #container3 .heading-para {
   text-align: center;
@@ -242,17 +263,26 @@ main #main-container #container3 .heading-para p {
 main #main-container #container3:hover .heading-para p {
   opacity: 1;
 }
+main #main-container #container3 {
+  /* 🔓 OPEN LOCK (default) */
+}
 main #main-container #container3 .open-lock {
   display: inline-block;
+}
+main #main-container #container3 {
+  /* 🔒 LOCK (hidden by default) */
 }
 main #main-container #container3 .icon3 {
   display: none;
 }
+main #main-container #container3 {
+  /* 📏 SLIDER (hover only) */
+}
 main #main-container #container3 .lucide-sliders-horizontal {
   display: inline-block;
 }
-main #main-container #container3.locked {
-  /* hide slider when NOT hovering */
+main #main-container #container3 {
+  /* 🔒 LOCKED STATE */
 }
 main #main-container #container3.locked .open-lock {
   display: none;
@@ -260,8 +290,14 @@ main #main-container #container3.locked .open-lock {
 main #main-container #container3.locked .icon3 {
   display: inline-block;
 }
+main #main-container #container3.locked {
+  /* hide slider when NOT hovering */
+}
 main #main-container #container3.locked .lucide-sliders-horizontal {
   display: none;
+}
+main #main-container #container3 {
+  /* show slider again on hover even when locked */
 }
 main #main-container #container3.locked:hover .lucide-sliders-horizontal {
   display: inline-block;
@@ -273,15 +309,6 @@ main #main-container #container4 {
   align-items: center;
   position: relative;
   /* ICON WRAPPER */
-  /* show icons on hover */
-  /* keep svg-div visible when locked */
-  /* SVG COMMON STYLE */
-  /* TEXT */
-  /* 🔓 OPEN LOCK (default) */
-  /* 🔒 LOCK (hidden by default) */
-  /* 📏 SLIDER (hover only) */
-  /* 🔒 LOCKED STATE */
-  /* show slider again on hover even when locked */
 }
 main #main-container #container4 .svg-div {
   margin-top: 30px;
@@ -295,13 +322,22 @@ main #main-container #container4 .svg-div {
   transform: translateY(-10px);
   transition: transform 0.4s ease;
 }
+main #main-container #container4 {
+  /* show icons on hover */
+}
 main #main-container #container4:hover .svg-div {
   visibility: visible;
   transform: translateY(0);
 }
+main #main-container #container4 {
+  /* keep svg-div visible when locked */
+}
 main #main-container #container4.locked .svg-div {
   visibility: visible;
   transform: translateY(0);
+}
+main #main-container #container4 {
+  /* SVG COMMON STYLE */
 }
 main #main-container #container4 svg {
   width: 17%;
@@ -310,6 +346,9 @@ main #main-container #container4 svg {
   padding: 10px;
   background-color: rgba(26, 26, 46, 0.082);
   cursor: pointer;
+}
+main #main-container #container4 {
+  /* TEXT */
 }
 main #main-container #container4 .heading-para {
   text-align: center;
@@ -329,17 +368,26 @@ main #main-container #container4 .heading-para p {
 main #main-container #container4:hover .heading-para p {
   opacity: 1;
 }
+main #main-container #container4 {
+  /* 🔓 OPEN LOCK (default) */
+}
 main #main-container #container4 .open-lock {
   display: inline-block;
+}
+main #main-container #container4 {
+  /* 🔒 LOCK (hidden by default) */
 }
 main #main-container #container4 .icon3 {
   display: none;
 }
+main #main-container #container4 {
+  /* 📏 SLIDER (hover only) */
+}
 main #main-container #container4 .lucide-sliders-horizontal {
   display: inline-block;
 }
-main #main-container #container4.locked {
-  /* hide slider when NOT hovering */
+main #main-container #container4 {
+  /* 🔒 LOCKED STATE */
 }
 main #main-container #container4.locked .open-lock {
   display: none;
@@ -347,8 +395,14 @@ main #main-container #container4.locked .open-lock {
 main #main-container #container4.locked .icon3 {
   display: inline-block;
 }
+main #main-container #container4.locked {
+  /* hide slider when NOT hovering */
+}
 main #main-container #container4.locked .lucide-sliders-horizontal {
   display: none;
+}
+main #main-container #container4 {
+  /* show slider again on hover even when locked */
 }
 main #main-container #container4.locked:hover .lucide-sliders-horizontal {
   display: inline-block;
@@ -360,15 +414,6 @@ main #main-container #container5 {
   align-items: center;
   position: relative;
   /* ICON WRAPPER */
-  /* show icons on hover */
-  /* keep svg-div visible when locked */
-  /* SVG COMMON STYLE */
-  /* TEXT */
-  /* 🔓 OPEN LOCK (default) */
-  /* 🔒 LOCK (hidden by default) */
-  /* 📏 SLIDER (hover only) */
-  /* 🔒 LOCKED STATE */
-  /* show slider again on hover even when locked */
 }
 main #main-container #container5 .svg-div {
   margin-top: 30px;
@@ -382,13 +427,22 @@ main #main-container #container5 .svg-div {
   transform: translateY(-10px);
   transition: transform 0.4s ease;
 }
+main #main-container #container5 {
+  /* show icons on hover */
+}
 main #main-container #container5:hover .svg-div {
   visibility: visible;
   transform: translateY(0);
 }
+main #main-container #container5 {
+  /* keep svg-div visible when locked */
+}
 main #main-container #container5.locked .svg-div {
   visibility: visible;
   transform: translateY(0);
+}
+main #main-container #container5 {
+  /* SVG COMMON STYLE */
 }
 main #main-container #container5 svg {
   width: 17%;
@@ -397,6 +451,9 @@ main #main-container #container5 svg {
   padding: 10px;
   background-color: rgba(26, 26, 46, 0.082);
   cursor: pointer;
+}
+main #main-container #container5 {
+  /* TEXT */
 }
 main #main-container #container5 .heading-para {
   text-align: center;
@@ -416,17 +473,26 @@ main #main-container #container5 .heading-para p {
 main #main-container #container5:hover .heading-para p {
   opacity: 1;
 }
+main #main-container #container5 {
+  /* 🔓 OPEN LOCK (default) */
+}
 main #main-container #container5 .open-lock {
   display: inline-block;
+}
+main #main-container #container5 {
+  /* 🔒 LOCK (hidden by default) */
 }
 main #main-container #container5 .icon3 {
   display: none;
 }
+main #main-container #container5 {
+  /* 📏 SLIDER (hover only) */
+}
 main #main-container #container5 .lucide-sliders-horizontal {
   display: inline-block;
 }
-main #main-container #container5.locked {
-  /* hide slider when NOT hovering */
+main #main-container #container5 {
+  /* 🔒 LOCKED STATE */
 }
 main #main-container #container5.locked .open-lock {
   display: none;
@@ -434,8 +500,14 @@ main #main-container #container5.locked .open-lock {
 main #main-container #container5.locked .icon3 {
   display: inline-block;
 }
+main #main-container #container5.locked {
+  /* hide slider when NOT hovering */
+}
 main #main-container #container5.locked .lucide-sliders-horizontal {
   display: none;
+}
+main #main-container #container5 {
+  /* show slider again on hover even when locked */
 }
 main #main-container #container5.locked:hover .lucide-sliders-horizontal {
   display: inline-block;
