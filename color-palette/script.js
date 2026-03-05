@@ -1,7 +1,7 @@
 const containers = document.querySelectorAll(
   "#container1, #container2, #container3, #container4, #container5",
 );
-
+const copyDivs = document.querySelectorAll("#copy-div");
 const generateBtn = document.getElementById("generate");
 const backwardBtn = document.getElementById("backward");
 const typeButtons = document.querySelectorAll(".type");
@@ -217,4 +217,28 @@ window.addEventListener("DOMContentLoaded", () => {
   history = [];
   historyIndex = -1;
   disableBackward();
+});
+
+/***********************
+  COPY COLOR
+************************/
+
+copyDivs.forEach((copyDiv) => {
+  copyDiv.addEventListener("click", () => {
+    const container = copyDiv.closest(".same");
+    const colorText = container.querySelector("h1").innerText;
+
+    navigator.clipboard.writeText(colorText);
+
+    const text = copyDiv.querySelector("p");
+    const icon = copyDiv.querySelector("i");
+
+    icon.style.display = "none";
+    text.innerText = "✓ Copied!";
+
+    setTimeout(() => {
+      icon.style.display = "inline-block";
+      text.innerText = "Click to copy";
+    }, 1500);
+  });
 });

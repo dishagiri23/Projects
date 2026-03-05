@@ -23,13 +23,12 @@ main {
       width: 25%;
       padding: 30px;
       text-align: center;
-    }
 
-    #container1 {
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
+      flex-direction: column;
 
       .svg-div {
         margin-top: 30px;
@@ -42,10 +41,6 @@ main {
         visibility: hidden;
         transform: translateY(-10px);
         transition: transform 0.4s ease;
-
-        // &:hover .icon3 .open-lock{
-        //   transform:scale(0.5);
-        // }
       }
 
       &:hover .svg-div {
@@ -60,7 +55,6 @@ main {
       }
       //couldn't understand
 
-
       svg {
         width: 17%;
         min-height: 7vh;
@@ -68,14 +62,22 @@ main {
         padding: 10px;
         background-color: rgba(26, 26, 46, 0.082);
         cursor: pointer;
+        transition: transform 0.3s ease; // Smooth transition for scaling
 
-
+        &:hover {
+          transform: scale(1.1); // Scale the svg by 10% on hover
+        }
       }
 
       .heading-para {
         h1 {
           font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           color: #1a1a2e;
+          transition: transform 0.3s ease; // Smooth transition for scaling
+
+          &:hover {
+            transform: scale(1.1); // Scale the svg by 10% on hover
+          }
         }
 
         p {
@@ -96,7 +98,6 @@ main {
         display: none;
       }
 
-      //couldn't understand
       &.locked {
         .open-lock {
           display: none;
@@ -112,425 +113,31 @@ main {
         }
       }
 
-      &.locked:hover .lucide-sliders-horizontal {
-        display: inline-block;
-      }
-    }
-    //couldn't understand
-
-    #container2 {
-      background-color: #52dca2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-
-      /* ICON WRAPPER */
-      .svg-div {
-        margin-top: 30px;
-        position: absolute;
-        top: 20px;
-        width: 100%;
+      #copy-div {
         display: flex;
         justify-content: center;
-        gap: 12px;
-
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: transform 0.4s ease;
-      }
-
-      /* show icons on hover */
-      &:hover .svg-div {
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      /* keep svg-div visible when locked */
-      &.locked .svg-div {
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      /* SVG COMMON STYLE */
-      svg {
-        width: 17%;
-        min-height: 7vh;
-        border-radius: 50%;
-        padding: 10px;
-        background-color: rgba(26, 26, 46, 0.082);
-        cursor: pointer;
-      }
-
-      /* TEXT */
-      .heading-para {
-        text-align: center;
-
-        h1 {
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-          color: #1a1a2e;
-        }
-
-        p {
-          margin: 5px 0;
-          color: #1a1a2e;
-          font-size: 14px;
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-          opacity: 0.5;
-          transition: opacity 0.3s ease;
-        }
-      }
-
-      &:hover .heading-para p {
-        opacity: 1;
-      }
-
-      /* 🔓 OPEN LOCK (default) */
-      .open-lock {
-        display: inline-block;
-      }
-
-      /* 🔒 LOCK (hidden by default) */
-      .icon3 {
-        display: none;
-      }
-
-      /* 📏 SLIDER (hover only) */
-      .lucide-sliders-horizontal {
-        display: inline-block;
-      }
-
-      /* 🔒 LOCKED STATE */
-      &.locked {
-        .open-lock {
-          display: none;
-        }
-
-        .icon3 {
-          display: inline-block;
-        }
-
-        /* hide slider when NOT hovering */
-        .lucide-sliders-horizontal {
-          display: none;
-        }
-      }
-
-      /* show slider again on hover even when locked */
-      &.locked:hover .lucide-sliders-horizontal {
-        display: inline-block;
-      }
-    }
-
-    #container3 {
-      background-color: #7ce5e5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-
-      /* ICON WRAPPER */
-      .svg-div {
-        margin-top: 30px;
-        position: absolute;
-        top: 20px;
+        align-items: center;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: transform 0.4s ease;
-      }
-
-      /* show icons on hover */
-      &:hover .svg-div {
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      /* keep svg-div visible when locked */
-      &.locked .svg-div {
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      /* SVG COMMON STYLE */
-      svg {
-        width: 17%;
-        min-height: 7vh;
-        border-radius: 50%;
-        padding: 10px;
-        background-color: rgba(26, 26, 46, 0.082);
         cursor: pointer;
-      }
 
-      /* TEXT */
-      .heading-para {
-        text-align: center;
+        opacity: 0;
+        transform: translateY(8px);
+        transition:
+          opacity 0.3s ease,
+          transform 0.3s ease;
 
-        h1 {
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-          color: #1a1a2e;
+        i {
+          opacity: 0.5;
         }
-
         p {
-          margin: 5px 0;
-          color: #1a1a2e;
-          font-size: 14px;
           font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
           opacity: 0.5;
-          transition: opacity 0.3s ease;
-        }
-      }
-
-      &:hover .heading-para p {
-        opacity: 1;
-      }
-
-      /* 🔓 OPEN LOCK (default) */
-      .open-lock {
-        display: inline-block;
-      }
-
-      /* 🔒 LOCK (hidden by default) */
-      .icon3 {
-        display: none;
-      }
-
-      /* 📏 SLIDER (hover only) */
-      .lucide-sliders-horizontal {
-        display: inline-block;
-      }
-
-      /* 🔒 LOCKED STATE */
-      &.locked {
-        .open-lock {
-          display: none;
         }
 
-        .icon3 {
-          display: inline-block;
+        &:hover {
+          opacity: 1;
+          transform: translateY(0);
         }
-
-        /* hide slider when NOT hovering */
-        .lucide-sliders-horizontal {
-          display: none;
-        }
-      }
-
-      /* show slider again on hover even when locked */
-      &.locked:hover .lucide-sliders-horizontal {
-        display: inline-block;
-      }
-    }
-
-    #container4 {
-      background-color: #52a3dc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-
-      /* ICON WRAPPER */
-      .svg-div {
-        margin-top: 30px;
-        position: absolute;
-        top: 20px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: transform 0.4s ease;
-      }
-
-      /* show icons on hover */
-      &:hover .svg-div {
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      /* keep svg-div visible when locked */
-      &.locked .svg-div {
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      /* SVG COMMON STYLE */
-      svg {
-        width: 17%;
-        min-height: 7vh;
-        border-radius: 50%;
-        padding: 10px;
-        background-color: rgba(26, 26, 46, 0.082);
-        cursor: pointer;
-      }
-
-      /* TEXT */
-      .heading-para {
-        text-align: center;
-
-        h1 {
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-          color: #1a1a2e;
-        }
-
-        p {
-          margin: 5px 0;
-          color: #1a1a2e;
-          font-size: 14px;
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-          opacity: 0.5;
-          transition: opacity 0.3s ease;
-        }
-      }
-
-      &:hover .heading-para p {
-        opacity: 1;
-      }
-
-      /* 🔓 OPEN LOCK (default) */
-      .open-lock {
-        display: inline-block;
-      }
-
-      /* 🔒 LOCK (hidden by default) */
-      .icon3 {
-        display: none;
-      }
-
-      /* 📏 SLIDER (hover only) */
-      .lucide-sliders-horizontal {
-        display: inline-block;
-      }
-
-      /* 🔒 LOCKED STATE */
-      &.locked {
-        .open-lock {
-          display: none;
-        }
-
-        .icon3 {
-          display: inline-block;
-        }
-
-        /* hide slider when NOT hovering */
-        .lucide-sliders-horizontal {
-          display: none;
-        }
-      }
-
-      /* show slider again on hover even when locked */
-      &.locked:hover .lucide-sliders-horizontal {
-        display: inline-block;
-      }
-    }
-
-    #container5 {
-      background-color: #7c8ee5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-
-      /* ICON WRAPPER */
-      .svg-div {
-        margin-top: 30px;
-        position: absolute;
-        top: 20px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: transform 0.4s ease;
-      }
-
-      /* show icons on hover */
-      &:hover .svg-div {
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      /* keep svg-div visible when locked */
-      &.locked .svg-div {
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      /* SVG COMMON STYLE */
-      svg {
-        width: 17%;
-        min-height: 7vh;
-        border-radius: 50%;
-        padding: 10px;
-        background-color: rgba(26, 26, 46, 0.082);
-        cursor: pointer;
-      }
-
-      /* TEXT */
-      .heading-para {
-        text-align: center;
-
-        h1 {
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-          color: #1a1a2e;
-        }
-
-        p {
-          margin: 5px 0;
-          color: #1a1a2e;
-          font-size: 14px;
-          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-          opacity: 0.5;
-          transition: opacity 0.3s ease;
-        }
-      }
-
-      &:hover .heading-para p {
-        opacity: 1;
-      }
-
-      /* 🔓 OPEN LOCK (default) */
-      .open-lock {
-        display: inline-block;
-      }
-
-      /* 🔒 LOCK (hidden by default) */
-      .icon3 {
-        display: none;
-      }
-
-      /* 📏 SLIDER (hover only) */
-      .lucide-sliders-horizontal {
-        display: inline-block;
-      }
-
-      /* 🔒 LOCKED STATE */
-      &.locked {
-        .open-lock {
-          display: none;
-        }
-
-        .icon3 {
-          display: inline-block;
-        }
-
-        /* hide slider when NOT hovering */
-        .lucide-sliders-horizontal {
-          display: none;
-        }
-      }
-
-      /* show slider again on hover even when locked */
-      &.locked:hover .lucide-sliders-horizontal {
-        display: inline-block;
       }
     }
   }
@@ -545,8 +152,6 @@ main {
     padding: 10px 10px;
     display: flex;
     align-items: center;
-
-
 
     #color-type {
       width: 15%;
@@ -589,54 +194,51 @@ main {
 
     #backward {
       margin-left: 10px;
-  width: 4%;
-  min-height: 6vh;
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
-  background-color: transparent;
-  border-radius: 50%;
+      width: 4%;
+      min-height: 6vh;
+      border: none;
+      border-radius: 5px;
+      padding: 5px;
+      background-color: transparent;
+      border-radius: 50%;
 
-  // 🔒 initial dull look
-  color: rgba(255, 255, 255, 0.206);
-  cursor: not-allowed;
-  transform: scale(1);
+      // 🔒 initial dull look
+      color: rgba(255, 255, 255, 0.206);
+      cursor: not-allowed;
+      transform: scale(1);
 
-  transition:
-    color 0.3s ease,
-    transform 0.25s ease,
-    filter 0.25s ease;
+      transition:
+        color 0.3s ease,
+        transform 0.25s ease,
+        filter 0.25s ease;
 
-  // 🚫 disabled state
-  &:disabled {
-    color: rgba(255, 255, 255, 0.206);
-    cursor: not-allowed;
-  }
+      // 🚫 disabled state
+      &:disabled {
+        color: rgba(255, 255, 255, 0.206);
+        cursor: not-allowed;
+      }
 
-  // 🔓 enabled (after Generate)
-  &:not(:disabled) {
-    color: rgba(255, 255, 255, 0.75);
-    cursor: pointer;
+      // 🔓 enabled (after Generate)
+      &:not(:disabled) {
+        color: rgba(255, 255, 255, 0.75);
+        cursor: pointer;
 
-    // ✨ hover effect
-    &:hover {
-      color: rgba(255, 255, 255, 1);
-      transform: scale(1.15);
-      filter: brightness(1.4);
-      background-color: #18231c;
+        // ✨ hover effect
+        &:hover {
+          color: rgba(255, 255, 255, 1);
+          transform: scale(1.15);
+          filter: brightness(1.4);
+          background-color: #18231c;
+        }
+
+        // 👇 click feedback
+        &:active {
+          transform: scale(1.05);
+        }
+      }
     }
 
-    // 👇 click feedback
-    &:active {
-      transform: scale(1.05);
-    }
-  }
-}
-
-
-
-
-    #generate{
+    #generate {
       margin-left: 40px;
       background-color: rgba(128, 128, 0, 0.64);
       color: white;
@@ -647,16 +249,16 @@ main {
       border: none;
       border-radius: 5px;
       transition: transform 0.25s ease;
-      box-shadow: 0px 0px 20px 1px #91ed3bbe ;
+      box-shadow: 0px 0px 20px 1px #91ed3bbe;
       cursor: pointer;
 
-      svg{
+      svg {
         width: 20%;
       }
     }
 
-    #generate:hover{
-       transform: scale(1.08);
+    #generate:hover {
+      transform: scale(1.08);
     }
   }
 }
