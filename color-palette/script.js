@@ -242,3 +242,15 @@ copyDivs.forEach((copyDiv) => {
     }, 1500);
   });
 });
+
+
+/***********************
+  TYPE BUTTON DEFAULT ACTIVE
+************************/
+typeButtons.forEach((btn) => {
+  if (btn.innerText === currentType) {
+    btn.style.backgroundColor = "#7C3BED";
+  } else {
+    btn.style.backgroundColor = "#18231c";
+  }
+});

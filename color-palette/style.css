@@ -116,7 +116,8 @@ main #main-container .same #copy-div:hover {
   opacity: 1;
   transform: translateY(0);
 }
-main footer {
+
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -127,7 +128,7 @@ main footer {
   display: flex;
   align-items: center;
 }
-main footer #color-type {
+footer #color-type {
   width: 15%;
   display: flex;
   gap: 5px;
@@ -136,7 +137,7 @@ main footer #color-type {
   padding: 10px 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-main footer #color-type .type {
+footer #color-type .type {
   width: 90%;
   text-align: center;
   justify-content: space-between;
@@ -148,10 +149,10 @@ main footer #color-type .type {
   color: rgba(255, 255, 255, 0.6); /* dull white */
   transition: color 0.3s ease;
 }
-main footer #color-type .type:hover {
+footer #color-type .type:hover {
   color: rgb(255, 255, 255);
 }
-main footer #backward {
+footer #backward {
   margin-left: 10px;
   width: 4%;
   min-height: 6vh;
@@ -160,29 +161,37 @@ main footer #backward {
   padding: 5px;
   background-color: transparent;
   border-radius: 50%;
-  color: rgba(255, 255, 255, 0.206);
+  color: white;
   cursor: not-allowed;
   transform: scale(1);
   transition: color 0.3s ease, transform 0.25s ease, filter 0.25s ease;
 }
-main footer #backward:disabled {
+footer #backward svg {
+  color: rgba(255, 255, 255, 0.489);
+  opacity: 0.5;
+}
+footer #backward:disabled {
   color: rgba(255, 255, 255, 0.206);
   cursor: not-allowed;
 }
-main footer #backward:not(:disabled) {
+footer #backward:not(:disabled) {
   color: rgba(255, 255, 255, 0.75);
   cursor: pointer;
 }
-main footer #backward:not(:disabled):hover {
+footer #backward:not(:disabled):hover {
   color: rgb(255, 255, 255);
   transform: scale(1.15);
   filter: brightness(1.4);
   background-color: #18231c;
 }
-main footer #backward:not(:disabled):active {
+footer #backward:not(:disabled):active {
   transform: scale(1.05);
 }
-main footer #generate {
+footer #backward:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+footer #generate {
   margin-left: 40px;
   background-color: rgba(128, 128, 0, 0.64);
   color: white;
@@ -196,9 +205,9 @@ main footer #generate {
   box-shadow: 0px 0px 20px 1px rgba(145, 237, 59, 0.7450980392);
   cursor: pointer;
 }
-main footer #generate svg {
+footer #generate svg {
   width: 20%;
 }
-main footer #generate:hover {
+footer #generate:hover {
   transform: scale(1.08);
 }/*# sourceMappingURL=style.css.map */

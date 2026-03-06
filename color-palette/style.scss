@@ -142,7 +142,10 @@ main {
     }
   }
 
-  footer {
+
+}
+
+footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -180,18 +183,6 @@ main {
       }
     }
 
-    //  #backward{
-    //   width: 4%;
-    //   border: none;
-    //   border-radius: 5px;
-    //   padding: 5px;
-    //   background-color: transparent;
-    //   color: rgba(255, 255, 255, 0.206); /* dull white */
-    //   transition: color 0.3s ease;
-    //   margin-left: 5px;
-    //   cursor: not-allowed;
-    // }
-
     #backward {
       margin-left: 10px;
       width: 4%;
@@ -203,7 +194,7 @@ main {
       border-radius: 50%;
 
       // 🔒 initial dull look
-      color: rgba(255, 255, 255, 0.206);
+      color: white;
       cursor: not-allowed;
       transform: scale(1);
 
@@ -212,6 +203,10 @@ main {
         transform 0.25s ease,
         filter 0.25s ease;
 
+        svg{
+          color: rgba(255, 255, 255, 0.489);
+           opacity: 0.5;
+        }
       // 🚫 disabled state
       &:disabled {
         color: rgba(255, 255, 255, 0.206);
@@ -236,7 +231,13 @@ main {
           transform: scale(1.05);
         }
       }
-    }
+        &:hover {
+          transform: scale(1.2); // Scale the svg by 10% on hover
+          opacity: 1;
+
+        }
+      }
+
 
     #generate {
       margin-left: 40px;
@@ -260,5 +261,5 @@ main {
     #generate:hover {
       transform: scale(1.08);
     }
-  }
-}
+    }
+
