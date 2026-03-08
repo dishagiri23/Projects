@@ -30,13 +30,9 @@ main #main-container .same {
   flex-direction: column;
 }
 main #main-container .same .svg-div {
-  margin-top: 30px;
   position: absolute;
   top: 20px;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
   visibility: hidden;
   transform: translateY(-10px);
   transition: transform 0.4s ease;
@@ -121,7 +117,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 12vh;
+  height: 15vh;
   background-color: rgba(7, 7, 8, 0.8941176471);
   color: white;
   padding: 10px 10px;
@@ -210,4 +206,39 @@ footer #generate svg {
 }
 footer #generate:hover {
   transform: scale(1.08);
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
+  main #main-container {
+    width: 100%;
+    min-height: inherit;
+    flex-direction: column;
+  }
+  main #main-container .same {
+    width: 100%;
+    min-height: 20vh;
+    position: relative;
+  }
+  main #main-container #container5 {
+    display: none;
+  }
+  footer {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer #color-type {
+    width: 100%;
+  }
+  footer #backward {
+    margin-left: 20px;
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

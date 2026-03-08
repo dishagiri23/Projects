@@ -23,7 +23,6 @@ main {
       width: 25%;
       padding: 30px;
       text-align: center;
-
       display: flex;
       justify-content: center;
       align-items: center;
@@ -31,13 +30,10 @@ main {
       flex-direction: column;
 
       .svg-div {
-        margin-top: 30px;
         position: absolute;
         top: 20px;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 12px;
+
         visibility: hidden;
         transform: translateY(-10px);
         transition: transform 0.4s ease;
@@ -141,125 +137,161 @@ main {
       }
     }
   }
-
-
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 12vh;
-    background-color: #070708e4;
-    color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 15vh;
+  background-color: #070708e4;
+  color: white;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+
+  #color-type {
+    width: 15%;
+    display: flex;
+    gap: 5px;
+    background-color: #18231c;
+    border-radius: 5px;
     padding: 10px 10px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    .type {
+      width: 90%;
+      text-align: center;
+      justify-content: space-between;
+      padding: 5px 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      background-color: #18231c;
+      color: rgba(255, 255, 255, 0.6); /* dull white */
+      transition: color 0.3s ease;
+    }
+
+    .type:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+
+  #backward {
+    margin-left: 10px;
+    width: 4%;
+    min-height: 6vh;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: transparent;
+    border-radius: 50%;
+
+    // 🔒 initial dull look
+    color: white;
+    cursor: not-allowed;
+    transform: scale(1);
+
+    transition:
+      color 0.3s ease,
+      transform 0.25s ease,
+      filter 0.25s ease;
+
+    svg {
+      color: rgba(255, 255, 255, 0.489);
+      opacity: 0.5;
+    }
+    // 🚫 disabled state
+    &:disabled {
+      color: rgba(255, 255, 255, 0.206);
+      cursor: not-allowed;
+    }
+
+    // 🔓 enabled (after Generate)
+    &:not(:disabled) {
+      color: rgba(255, 255, 255, 0.75);
+      cursor: pointer;
+
+      // ✨ hover effect
+      &:hover {
+        color: rgba(255, 255, 255, 1);
+        transform: scale(1.15);
+        filter: brightness(1.4);
+        background-color: #18231c;
+      }
+
+      // 👇 click feedback
+      &:active {
+        transform: scale(1.05);
+      }
+    }
+    &:hover {
+      transform: scale(1.2); // Scale the svg by 10% on hover
+      opacity: 1;
+    }
+  }
+
+  #generate {
+    margin-left: 40px;
+    background-color: rgba(128, 128, 0, 0.64);
+    color: white;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
+    gap: 5px;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.25s ease;
+    box-shadow: 0px 0px 20px 1px #91ed3bbe;
+    cursor: pointer;
+
+    svg {
+      width: 20%;
+    }
+  }
+
+  #generate:hover {
+    transform: scale(1.08);
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+
+    #main-container {
+      width: 100%;
+      min-height: inherit;
+      flex-direction: column;
+
+      .same {
+        width: 100%;
+        min-height: 20vh;
+        position: relative;
+      }
+
+      #container5 {
+        display: none;
+      }
+    }
+  }
+
+  footer {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     #color-type {
-      width: 15%;
-      display: flex;
-      gap: 5px;
-      background-color: #18231c;
-      border-radius: 5px;
-      padding: 10px 10px;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
-      .type {
-        width: 90%;
-        text-align: center;
-        justify-content: space-between;
-        padding: 5px 5px;
-        border-radius: 5px;
-        cursor: pointer;
-        border: none;
-        background-color: #18231c;
-        color: rgba(255, 255, 255, 0.6); /* dull white */
-        transition: color 0.3s ease;
-      }
-
-      .type:hover {
-        color: rgba(255, 255, 255, 1);
-      }
+      width: 100%;
     }
 
     #backward {
-      margin-left: 10px;
-      width: 4%;
-      min-height: 6vh;
-      border: none;
-      border-radius: 5px;
-      padding: 5px;
-      background-color: transparent;
-      border-radius: 50%;
-
-      // 🔒 initial dull look
-      color: white;
-      cursor: not-allowed;
-      transform: scale(1);
-
-      transition:
-        color 0.3s ease,
-        transform 0.25s ease,
-        filter 0.25s ease;
-
-        svg{
-          color: rgba(255, 255, 255, 0.489);
-           opacity: 0.5;
-        }
-      // 🚫 disabled state
-      &:disabled {
-        color: rgba(255, 255, 255, 0.206);
-        cursor: not-allowed;
-      }
-
-      // 🔓 enabled (after Generate)
-      &:not(:disabled) {
-        color: rgba(255, 255, 255, 0.75);
-        cursor: pointer;
-
-        // ✨ hover effect
-        &:hover {
-          color: rgba(255, 255, 255, 1);
-          transform: scale(1.15);
-          filter: brightness(1.4);
-          background-color: #18231c;
-        }
-
-        // 👇 click feedback
-        &:active {
-          transform: scale(1.05);
-        }
-      }
-        &:hover {
-          transform: scale(1.2); // Scale the svg by 10% on hover
-          opacity: 1;
-
-        }
-      }
-
-
-    #generate {
-      margin-left: 40px;
-      background-color: rgba(128, 128, 0, 0.64);
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      border: none;
-      border-radius: 5px;
-      transition: transform 0.25s ease;
-      box-shadow: 0px 0px 20px 1px #91ed3bbe;
-      cursor: pointer;
-
-      svg {
-        width: 20%;
-      }
+      margin-left: 20px;
+      width: 100%;
     }
-
-    #generate:hover {
-      transform: scale(1.08);
-    }
-    }
-
+  }
+}
