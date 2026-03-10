@@ -19,7 +19,7 @@ main #main-container {
   min-height: inherit;
 }
 main #main-container .same {
-  min-height: inherit;
+  min-height: 20vh;
   width: 25%;
   padding: 30px;
   text-align: center;
@@ -114,17 +114,17 @@ main #main-container .same #copy-div:hover {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  height: 15vh;
+  min-height: 17vh;
   background-color: rgba(7, 7, 8, 0.8941176471);
   color: white;
   padding: 10px 10px;
   display: flex;
   align-items: center;
 }
-footer #color-type {
+footer .color-type {
   width: 15%;
   display: flex;
   gap: 5px;
@@ -133,7 +133,7 @@ footer #color-type {
   padding: 10px 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-footer #color-type .type {
+footer .color-type .type {
   width: 90%;
   text-align: center;
   justify-content: space-between;
@@ -145,16 +145,16 @@ footer #color-type .type {
   color: rgba(255, 255, 255, 0.6); /* dull white */
   transition: color 0.3s ease;
 }
-footer #color-type .type:hover {
+footer .color-type .type:hover {
   color: rgb(255, 255, 255);
 }
 footer #backward {
   margin-left: 10px;
   width: 4%;
-  min-height: 6vh;
+  min-height: 4vh;
   border: none;
   border-radius: 5px;
-  padding: 5px;
+  padding: 5px 5px;
   background-color: transparent;
   border-radius: 50%;
   color: white;
@@ -213,6 +213,7 @@ footer #generate:hover {
     padding: 0;
     width: 100%;
     min-height: 100vh;
+    position: fixed;
   }
   main #main-container {
     width: 100%;
@@ -221,7 +222,6 @@ footer #generate:hover {
   }
   main #main-container .same {
     width: 100%;
-    min-height: 20vh;
     position: relative;
   }
   main #main-container #container5 {
@@ -229,16 +229,118 @@ footer #generate:hover {
   }
   footer {
     width: 100%;
+    min-height: 12vh;
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  footer #color-type {
+  footer .color-type {
     width: 100%;
   }
   footer #backward {
     margin-left: 20px;
     width: 100%;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  main {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+  }
+  main #main-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  main #main-container #container5 {
+    display: none;
+  }
+  main #main-container .same {
+    width: 100%;
+    min-height: 18vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 5px;
+  }
+  main #main-container .same .svg-div {
+    border-radius: 50%;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  main #main-container .same .svg-div svg {
+    width: 10%;
+    min-height: 4vh;
+  }
+  main #main-container .same .heading-para {
+    text-align: center;
+    margin-top: 10px;
+  }
+  main #main-container .same .heading-para h1 {
+    font-size: 1.2rem;
+  }
+  main #main-container .same .heading-para p {
+    font-size: 0.8rem;
+  }
+  main #main-container footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+    min-height: 10vh;
+    background-color: rgba(7, 7, 8, 0.8941176471);
+  }
+  main #main-container footer .color-type {
+    display: flex;
+    gap: 5px;
+    flex: 1;
+  }
+  main #main-container footer .color-type .type {
+    flex: 1;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 5px;
+    font-size: 0.9rem;
+  }
+  main #main-container footer #backward {
+    width: 40%;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px 5px;
+  }
+  main #main-container footer #generate {
+    flex: 1;
+    margin-left: 10px;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 0, 0.64);
+    color: white;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  main #main-container footer #generate svg {
+    width: 20px;
+    height: 20px;
   }
 }/*# sourceMappingURL=style.css.map */

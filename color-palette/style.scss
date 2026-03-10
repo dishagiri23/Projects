@@ -19,7 +19,7 @@ main {
     min-height: inherit;
 
     .same {
-      min-height: inherit;
+      min-height: 20vh;
       width: 25%;
       padding: 30px;
       text-align: center;
@@ -140,17 +140,17 @@ main {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  height: 15vh;
+  min-height: 17vh;
   background-color: #070708e4;
   color: white;
   padding: 10px 10px;
   display: flex;
   align-items: center;
 
-  #color-type {
+  .color-type {
     width: 15%;
     display: flex;
     gap: 5px;
@@ -180,10 +180,10 @@ footer {
   #backward {
     margin-left: 10px;
     width: 4%;
-    min-height: 6vh;
+    min-height: 4vh;
     border: none;
     border-radius: 5px;
-    padding: 5px;
+    padding: 5px 5px;
     background-color: transparent;
     border-radius: 50%;
 
@@ -255,11 +255,14 @@ footer {
   }
 }
 
+
+//phone
 @media (max-width: 600px) {
   main {
     padding: 0;
     width: 100%;
     min-height: 100vh;
+    position: fixed;
 
     #main-container {
       width: 100%;
@@ -268,7 +271,6 @@ footer {
 
       .same {
         width: 100%;
-        min-height: 20vh;
         position: relative;
       }
 
@@ -280,18 +282,147 @@ footer {
 
   footer {
     width: 100%;
+    min-height: 12vh;
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    #color-type {
+    .color-type {
       width: 100%;
     }
 
     #backward {
       margin-left: 20px;
       width: 100%;
+    }
+  }
+}
+
+//tablets
+@media (min-width: 601px) and (max-width: 1024px) {
+  main {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+
+
+    #main-container {
+    position: fixed;
+      display: flex;
+      flex-direction: column;  // stack color blocks vertically
+      overflow: hidden;
+
+      #container5 {
+        display: none;         // hide container5 for tablet view
+      }
+
+      .same {
+        width: 100%;            // full width for each color block
+        min-height: 18vh;       // adjust height for tablet
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-bottom: 5px;     // spacing between blocks
+
+        .svg-div {
+          border-radius: 50%;   // keep round icons
+          width: 100%;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+
+          svg {
+            width: 10%;
+            min-height: 4vh;
+
+          }
+        }
+
+        .heading-para {
+          text-align: center;
+          margin-top: 10px;
+
+          h1 {
+            font-size: 1.2rem;
+          }
+
+          p {
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      footer {
+        width: 100%;
+        // position: fixed;
+        // bottom: 0;
+        // left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 10px 20px;
+        min-height: 10vh;
+        background-color: #070708e4;
+
+        .color-type {
+          display: flex;
+          gap: 5px;
+          flex: 1;
+
+          .type {
+            flex: 1;
+            text-align: center;
+            padding: 8px 0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+          }
+        }
+
+        #backward {
+          width: 40%;
+          // height: 40px;
+          margin: 0 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background-color: transparent;
+          cursor: pointer;
+          border-radius: 50%;
+          padding: 5px 5px;
+
+          // svg {
+          //   width: 20px;
+          //   height: 20px;
+          // }
+        }
+
+        #generate {
+          flex: 1;
+          margin-left: 10px;
+          text-align: center;
+          padding: 8px 0;
+          border-radius: 5px;
+          background-color: rgba(128, 128, 0, 0.64);
+          color: white;
+          font-size: 0.9rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
     }
   }
 }
