@@ -143,15 +143,16 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  min-height: 17vh;
+  min-height: 15vh;
   background-color: #070708e4;
   color: white;
   padding: 10px 10px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   .color-type {
-    width: 15%;
+    width:30%;
     display: flex;
     gap: 5px;
     background-color: #18231c;
@@ -179,7 +180,7 @@ footer {
 
   #backward {
     margin-left: 10px;
-    width: 4%;
+    width: 3%;
     min-height: 4vh;
     border: none;
     border-radius: 5px;
@@ -426,3 +427,4 @@ footer {
     }
   }
 }
+
