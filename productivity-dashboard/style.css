@@ -32,7 +32,7 @@
     padding: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: aeonik;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--pri);
 
 }
@@ -62,7 +62,7 @@ section.allElems {
 
 .allElems header {
     width: 100%;
-    background-image: url(https://images.unsplash.com/photo-1717361279773-b2e7ee713d2e?q=80&w=3869&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-image: url(header.jpg);
     background-size: cover;
     background-position: center;
     margin-bottom: 40px;
@@ -83,21 +83,25 @@ header .header1 h1 {
     font-size: 80px;
     font-weight: 700;
     margin-bottom: 60px;
+    color: var(--black);
 }
 
 header .header1 h2 {
     font-size: 40px;
     font-weight: 500;
+     color: var(--black);
 }
 
 header .header1 h4 {
     font-weight: 500;
     font-size: 40px;
+     color: var(--black);
 }
 
 header .header2 h2 {
     font-weight: 700;
     font-size: 70px;
+     color: var(--black);
 }
 
 header .header2 h4 {
@@ -105,12 +109,14 @@ header .header2 h4 {
     margin-top: -10px;
     margin-bottom: 45px;
     font-size: 40px;
+     color: var(--black);
 }
 
 header .header2 h3 {
     font-weight: 500;
     font-size: 20px;
     opacity: 0.8;
+     color: var(--black);
 }
 
 .allElems .allFeatures {
@@ -123,9 +129,12 @@ header .header2 h3 {
     -ms-flex-align: start;
     align-items: flex-start;
     gap: 40px;
+    width: 100%;
+
 }
 
 .elem {
+
     height: 400px;
     width: 330px;
     border-radius: 10px;
@@ -147,12 +156,13 @@ header .header2 h3 {
 }
 
 .elem h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: absolute;
     bottom: 4%;
     font-weight: 500;
     font-size: 33px;
     right: 5%;
-
+    color: black;
 }
 
 .elem:active {
