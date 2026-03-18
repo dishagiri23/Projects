@@ -119,7 +119,7 @@ function motivationalQuote() {
 
   async function fetchQuote() {
     try {
-      let response = await fetch("https://api.quotable.io/random");
+      let response = await fetch("http://api.quotable.io/random");
       let data = await response.json();
 
       motivationQuoteContent.innerHTML = data.content;
