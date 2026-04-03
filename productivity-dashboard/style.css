@@ -54,7 +54,6 @@ section.allElems {
     height: 100%;
     width: 100%;
     padding: 40px;
-
     overflow: auto;
     position: absolute;
 
@@ -134,7 +133,6 @@ header .header2 h3 {
 }
 
 .elem {
-
     height: 400px;
     width: 330px;
     border-radius: 10px;
@@ -175,14 +173,14 @@ header .header2 h3 {
     background-color: var(--sec);
     padding: 40px;
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 999;
 }
 
 .back {
     position: absolute;
-    right: 5%;
+    right: 0%;   /* adjust value (10px, 30px, 40px as you like) */
     background-color: var(--red);
     border-radius: 10px;
     padding: 15px 22px;
@@ -195,7 +193,6 @@ header .header2 h3 {
 .back:active {
     scale: 0.97;
 }
-
 
 .todo-list-fullpage h2 {
     font-size: 65px;
@@ -222,6 +219,9 @@ header .header2 h3 {
     background-color: var(--tri2);
     height: 100%;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;   /* prevents overflow */
 }
 
 .todo-list-fullpage .todo-container .addTask form {
@@ -236,6 +236,7 @@ header .header2 h3 {
     -ms-flex-align: start;
     align-items: flex-start;
     padding: 30px;
+    height: 100%;
 }
 
 .todo-container .addTask form #task-input {
@@ -253,7 +254,7 @@ header .header2 h3 {
 
 .todo-container .addTask form textarea {
     padding: 15px 25px;
-    width: 100%;
+    /* width: 100%; */
     font-size: 29px;
     background-color: var(--pri);
     color: var(--sec);
@@ -262,6 +263,10 @@ header .header2 h3 {
     border: none;
     outline: none;
     margin-bottom: 20px;
+     width: 100%;
+    height: 150px;              /* control height */
+    resize: none;               /* stop manual stretching */
+    box-sizing: border-box;
 }
 
 .todo-container .addTask form button {
@@ -277,6 +282,7 @@ header .header2 h3 {
     -webkit-transition: all ease 0.3s;
     -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
+    cursor: pointer;
 }
 
 .todo-container .addTask form button:active {
@@ -305,13 +311,13 @@ header .header2 h3 {
 .task {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    /* display: flex; */
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
+    /* align-items: center; */
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 100%;
     background-color: var(--pri);
     padding: 20px 30px;
@@ -355,6 +361,7 @@ header .header2 h3 {
     border-radius: 5px;
     border: none;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .task button:active {
@@ -375,15 +382,18 @@ header .header2 h3 {
     margin-bottom: 20px;
     width: 100%;
     gap: 30px;
+
 }
 
 .mark-imp input {
     scale: 1.7;
+     cursor: pointer;
+
 }
 
 .mark-imp label {
     font-size: 21px;
-
+     cursor: pointer;
 }
 
 .daily-planner-fullpage h2 {
@@ -442,7 +452,7 @@ header .header2 h3 {
     outline: none;
 }
 
-.motivation-fullPage-container {
+/* .motivation-fullPage-container {
     height: 100%;
     width: 100%;
     display: -webkit-box;
@@ -454,9 +464,9 @@ header .header2 h3 {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-}
+} */
 
-.motivational-fullpage .motivation-container {
+/* .motivational-fullpage .motivation-container {
     height: 600px;
     width: 80%;
     border-radius: 50px;
@@ -474,8 +484,8 @@ header .header2 h3 {
     -webkit-filter: blur(100px);
     filter: blur(100px);
     z-index: 8;
-}
-
+} */
+/*
 .motivational-fullpage .motivation-container .motivation-wrapper {
     z-index: 10;
     position: absolute;
@@ -511,9 +521,9 @@ header .header2 h3 {
     width: fit-content;
     font-weight: 500;
     text-align: right;
-}
+} */
 
-.motivation-2 {
+/* .motivation-2 {
     margin-top: 40px;
     margin-bottom: 40px;
     padding: 30px;
@@ -557,12 +567,15 @@ header .header2 h3 {
     opacity: 0.2;
     top: 5%;
     height: 120px;
-}
+} */
 
 .pomodoro-fullpage h2 {
     font-size: 50px;
 }
 
+.pomodoro-fullpage .pomo-timer button{
+    cursor: pointer;
+}
 .pomodoro-fullpage .pomo-timer {
     position: absolute;
     top: 45%;
@@ -600,7 +613,7 @@ header .header2 h3 {
 
 .pomodoro-fullpage .session {
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 50%;
     -webkit-transform: translate(-50%, 0);
     -ms-transform: translate(-50%, 0);
