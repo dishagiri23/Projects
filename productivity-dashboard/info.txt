@@ -1,0 +1,76 @@
+
+
+/* TO DO PAGE */
+.todo-list-fullpage .todo-container{
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+}
+
+.todo-list-fullpage .todo-container .addTask,
+.todo-list-fullpage .todo-container .allTask{
+    width: 100%;
+}
+
+.todo-list-fullpage h2{
+    font-size: 35px;
+}
+
+.todo-container .addTask form #task-input,
+.todo-container .addTask form textarea{
+    font-size: 18px;
+}
+
+.todo-container .addTask form button{
+    font-size: 18px;
+}
+
+/* DAILY PLANNER PAGE */
+.daily-planner-fullpage h2{
+    font-size: 35px;
+}
+
+.daily-planner-fullpage .day-planner{
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 15px;
+}
+
+.daily-planner-fullpage .day-planner .day-planner-time{
+    width: 100%;
+}
+
+.day-planner .day-planner-time input{
+    font-size: 20px;
+    padding: 18px 20px;
+    padding-top: 30px;
+}
+
+/* POMODORO TIMER PAGE */
+.pomodoro-fullpage h2{
+    font-size: 35px;
+    text-align: center;
+}
+
+.pomo-timer{
+    width: 100%;
+}
+
+.pomo-timer h1{
+    font-size: 80px;
+}
+
+.pomo-timer button{
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+    font-size: 22px;
+    padding: 12px;
+}
+
+.pomodoro-fullpage .session{
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+

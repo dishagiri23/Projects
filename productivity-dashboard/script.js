@@ -29,16 +29,37 @@ function todoList() {
     var sum = "";
 
     currentTask.forEach(function (elem, idx) {
+
       sum += `
-    <div class="task">
-      <div>
-        <h5>${elem.task} <span class="${elem.imp}">imp</span></h5>
-        <p style="color:#381c0a; font-size:18px; margin-top:5px;">
-          ${elem.details || ""}
-        </p>
-      </div>
-      <button id="${idx}">Mark as Completed</button>
-    </div>`;
+<div class="task-wrapper">
+
+  <div class="task">
+    <div>
+      <h5>${elem.task} <span class="${elem.imp}">imp</span></h5>
+
+      <p style="color:#381c0a; font-size:18px; margin-top:5px;">
+        ${elem.details || ""}
+      </p>
+    </div>
+  </div>
+
+  <button id="${idx}">
+    <i class="ri-check-line"></i>
+  </button>
+
+</div>`;
+    //   sum += `
+    // <div class="task">
+    //   <div>
+    //     <h5>${elem.task} <span class="${elem.imp}">imp</span></h5>
+    //     <p style="color:#381c0a; font-size:18px; margin-top:5px;">
+    //       ${elem.details || ""}
+    //     </p>
+    //   </div>
+    //   <button id="${idx}">Mark as Completed</button>
+    // </div>`;
+
+
     });
 
     allTask.innerHTML = sum;
